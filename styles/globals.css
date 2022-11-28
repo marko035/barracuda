@@ -8,7 +8,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* background: #1f1f1f; */
 }
 
 a {
@@ -40,6 +39,19 @@ a {
   width: 45px;
   height: 1px;
   background: rgb(22, 163, 74);
+}
+
+.headerUnderline {
+  width: 25px;
+  height: 1px;
+  background: rgb(22, 163, 74);
+  width: 0;
+  margin-top: 5px;
+}
+
+.navbarLink:hover .headerUnderline {
+  width: 30px;
+  transition: all 0.5s;
 }
 
 .glovesTopSection {
