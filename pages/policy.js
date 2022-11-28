@@ -115,7 +115,7 @@ function privacyPolicy() {
         </p>
       </section>
 
-      <Footer />
+      <Footer darkBackground={true} />
     </>
   );
 }
