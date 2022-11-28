@@ -1,11 +1,65 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 
 function gloves() {
   const [quantity, setQuantity] = useState(1);
+  const [imageNumber, setImageNumber] = useState(1);
+  const [variant, setVariant] = useState("black");
   const price = 25;
+  const gloveVariants = [
+    {
+      name: "Black",
+      color: "bg-black",
+      variant: "black",
+    },
+    {
+      name: "Red",
+      color: "bg-red-700",
+      variant: "red",
+    },
+    {
+      name: "Sky b.",
+      color: "bg-sky-300",
+      variant: "sky",
+    },
+    {
+      name: "Dark b.",
+      color: "bg-blue-900",
+      variant: "dark",
+    },
+    {
+      name: "Navy b.",
+      color: "bg-indigo-900",
+      variant: "navy",
+    },
+    {
+      name: "Orange",
+      color: "bg-orange-400",
+      variant: "orange",
+    },
+    {
+      name: "Purple",
+      color: "bg-purple-700",
+      variant: "purple",
+    },
+    {
+      name: "Green",
+      color: "bg-green-600",
+      variant: "green",
+    },
+    {
+      name: "Yellow",
+      color: "bg-yellow-400",
+      variant: "yellow",
+    },
+    {
+      name: "Grey",
+      color: "bg-gray-500",
+      variant: "grey",
+    },
+  ];
 
   return (
     <>
@@ -56,9 +110,8 @@ function gloves() {
           <p className="text-white">
             Available in 10 colors you can chose from
           </p>
-          <u>- CLICK ON COLOR RECTANGLE -</u>
 
-          <div className="flex flex-col justify-items-stretch">
+          <div className="flex flex-col justify-items-stretch mt-6">
             <div className="grid grid-cols-3 gap-x-3 items-center pt-6">
               <span>Black</span>
               <div className="flex justify-center gap-4">
@@ -114,106 +167,133 @@ function gloves() {
           </h1>
 
           <div className="grid grid-cols-10 gap-x-2 w-[600px] text-gray-400 h-[70px] text-xs cursor-pointer">
-            <div className="py-1 hover:border-b-4 hover:border-b-black">
-              <span>Black</span>
-              <div className="bg-black h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-red-700">
-              <span>Red</span>
-              <div className="bg-red-700 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-sky-300">
-              <span>Sky b.</span>
-              <div className="bg-sky-300 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-blue-900">
-              <span>Dark b.</span>
-              <div className="bg-blue-900 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-indigo-900">
-              <span>Navy b.</span>
-              <div className="bg-indigo-900 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-orange-400">
-              <span>Orange</span>
-              <div className="bg-orange-400 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-purple-700">
-              <span>Purple</span>
-              <div className="bg-purple-700 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-green-600">
-              <span>Green</span>
-              <div className="bg-green-600 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-yellow-400">
-              <span>Yellow</span>
-              <div className="bg-yellow-400 h-12"></div>
-            </div>
-
-            <div className="py-1 hover:border-b-4 hover:border-b-gray-500">
-              <span>Grey</span>
-              <div className="bg-gray-500 h-12"></div>
-            </div>
+            {gloveVariants.map((glove) => (
+              <div
+                key={glove.name}
+                className={
+                  "py-1 cursor-pointer " +
+                  (variant === glove.variant
+                    ? "border-b-4 border-b-" + glove.color.slice(3)
+                    : "")
+                }
+                onClick={() => setVariant(glove.variant)}
+              >
+                <span>{glove.name}</span>
+                <div
+                  className={
+                    "flex justify-center items-center h-12 " + glove.color
+                  }
+                >
+                  {variant === glove.variant ? (
+                    <span className="text-white text-3xl">&#10003;</span>
+                  ) : null}
+                </div>
+              </div>
+            ))}
           </div>
+
+          {/* {gloveVariants.map((glove) =>
+            variant === glove.variant ? (
+              <React.Fragment key={glove.variant}>
+                {imageNumber === 1 ? (
+                  <Image
+                    key={glove.variant + "1"}
+                    width={600}
+                    height={600}
+                    src={`/gloves/${glove.variant}-1.jpg`}
+                    className="mt-4"
+                    alt="Glove Preview"
+                  />
+                ) : null}
+                {imageNumber === 1 ? (
+                  <Image
+                    key={glove.variant + "2"}
+                    width={600}
+                    height={600}
+                    src={`/gloves/${glove.variant}-2.jpg`}
+                    className="mt-4 hidden"
+                    alt="Glove Preview"
+                  />
+                ) : null}
+                {imageNumber === 3 ? (
+                  <Image
+                    key={glove.variant + "3"}
+                    width={600}
+                    height={600}
+                    src={`/gloves/${glove.variant}-3.jpg`}
+                    className="mt-4"
+                    alt="Glove Preview"
+                  />
+                ) : null}
+                {imageNumber === 4 ? (
+                  <Image
+                    key={glove.variant + "4"}
+                    width={600}
+                    height={600}
+                    src={`/gloves/${glove.variant}-4.jpg`}
+                    className="mt-4"
+                    alt="Glove Preview"
+                  />
+                ) : null}
+              </React.Fragment>
+            ) : null
+          )} */}
 
           <Image
             width={600}
-            height={600}
-            src="/blackGlove.jpeg"
+            height={400}
+            src={`/compressed/${variant}-${imageNumber}.webp`}
             className="mt-4"
             alt="Glove Preview"
+            priority
           />
 
           <div className="flex items-center ml-[-80px]">
             <div className="w-20 h-20 mt-8 leftArrow"></div>
-            <div className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-[600px] imageCarousel cursor-pointer">
+
+            <div
+              key={variant}
+              className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-[600px] imageCarousel cursor-pointer"
+            >
               <Image
                 width={200}
-                height={200}
-                src="/blackGlove.jpeg"
+                height={133}
+                src={`/compressed/${variant}-1.webp`}
                 alt="Glove Preview"
+                onClick={() => setImageNumber(1)}
+                priority
               />
               <Image
                 width={200}
-                height={200}
-                src="/blackGlove.jpeg"
+                height={133}
+                src={`/compressed/${variant}-2.webp`}
                 alt="Glove Preview"
+                onClick={() => setImageNumber(2)}
+                priority
               />
               <Image
                 width={200}
-                height={200}
-                src="/blackGlove.jpeg"
+                height={133}
+                src={`/compressed/${variant}-3.webp`}
                 alt="Glove Preview"
+                onClick={() => setImageNumber(3)}
+                priority
               />
               <Image
                 width={200}
-                height={200}
-                src="/blackGlove.jpeg"
+                height={133}
+                src={`/compressed/${variant}-4.webp`}
                 alt="Glove Preview"
-              />
-              <Image
-                width={200}
-                height={200}
-                src="/blackGlove.jpeg"
-                alt="Glove Preview"
-              />
-              <Image
-                width={200}
-                height={200}
-                src="/blackGlove.jpeg"
-                alt="Glove Preview"
+                onClick={() => setImageNumber(4)}
+                priority
               />
             </div>
+
             <div className="w-20 h-20 mt-8 rightArrow"></div>
+          </div>
+          <div className="flex justify-between text-2xl w-[600px] mt-2">
+            <span>$25.00</span>
+            <span>FREE SHIPPING</span>
           </div>
         </div>
 
@@ -230,7 +310,7 @@ function gloves() {
                     value="left"
                     id="leftHand"
                   />
-                  <label for="leftHand">left</label>
+                  <label htmlFor="leftHand">left</label>
                 </div>
                 <div className="flex-1">
                   <input
@@ -240,7 +320,7 @@ function gloves() {
                     value="right"
                     id="rightHand"
                   />
-                  <label for="rightHand">right</label>
+                  <label htmlFor="rightHand">right</label>
                 </div>
               </div>
             </div>
@@ -256,7 +336,7 @@ function gloves() {
                     value="medium"
                     id="mediumSize"
                   />
-                  <label for="mediumSize">medium</label>
+                  <label htmlFor="mediumSize">medium</label>
                 </div>
 
                 <div className="flex-1">
@@ -267,7 +347,7 @@ function gloves() {
                     value="large"
                     id="largeSize"
                   />
-                  <label for="largeSize">large</label>
+                  <label htmlFor="largeSize">large</label>
                 </div>
               </div>
             </div>
@@ -306,20 +386,35 @@ function gloves() {
             </button>
 
             <div className="w-full flex justify-center mt-10 gap-2">
-              <Image src="/applePay.png" width={80} height={80} />
-              <Image src="/googlePay.png" width={80} height={80} />
-              <Image src="/paypal.png" width={80} height={80} />
+              <Image
+                src="/applePay.png"
+                width={94}
+                height={93}
+                alt="ApplePay"
+              />
+              <Image
+                src="/googlePay.png"
+                width={94}
+                height={93}
+                alt="GooglePay"
+              />
+              <Image src="/paypal.png" width={93} height={93} alt="Paypal" />
             </div>
 
             <div className="w-full flex justify-center mt-2 gap-2">
-              <Image src="/visa.png" width={80} height={80} />
-              <Image src="/mastercard.png" width={80} height={80} />
+              <Image src="/visa.png" width={94} height={94} alt="Visa" />
+              <Image
+                src="/mastercard.png"
+                width={93}
+                height={94}
+                alt="Mastercard"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <Footer />
+      <Footer darkBackground={false} />
     </>
   );
 }

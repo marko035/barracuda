@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           height={180}
           alt="Small Logo"
           className="absolute smallLogo"
+          id="aboutUs"
         />
       </section>
 
@@ -84,7 +86,7 @@ export default function Home() {
                 pool gloves
               </h2>
               <h3 className="mb-8 underline text-xl text-green-600">
-                LEARN MORE
+                <Link href="/gloves">LEARN MORE</Link>
               </h3>
             </div>
 
@@ -117,7 +119,7 @@ export default function Home() {
         </p>
       </section>
 
-      <Footer />
+      <Footer darkBackground={false} />
     </>
   );
 }

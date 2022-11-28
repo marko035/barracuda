@@ -26,21 +26,31 @@ function Header() {
           (scrolled ? " bg-[#1F1F1F]" : "")
         }
       >
-        <div className="h-[75px] w-[150px] relative">
-          <Image src="/logo.png" fill alt="logo" className="object-contain" />
+        <div>
+          <Image
+            src="/logo.png"
+            width={209}
+            height={51}
+            alt="logo"
+            className="object-contain"
+          />
         </div>
         <div className="flex sm:text-sm items-stretch h-[75px] box-content">
-          <div className="box-content flex p-4 items-center hover:border hover:border-green-600">
+          <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/">HOME</Link>
+            <div className="headerUnderline"></div>
           </div>
-          <div className="flex p-4 items-center hover:border hover:border-green-600">
+          <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/gloves">GLOVES</Link>
+            <div className="headerUnderline"></div>
           </div>
-          <div className="flex p-4 items-center hover:border hover:border-green-600">
+          <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/holders">HOLDERS</Link>
+            <div className="headerUnderline"></div>
           </div>
-          <div className="flex p-4 items-center hover:border hover:border-green-600">
+          <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/cart">CART</Link>
+            <div className="headerUnderline"></div>
           </div>
         </div>
       </header>

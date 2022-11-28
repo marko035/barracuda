@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function Footer() {
+function Footer({ darkBackground }) {
   return (
     <>
       <footer className="relative h-[400px]">
@@ -9,11 +9,16 @@ function Footer() {
           src="/footer.png"
           fill
           alt="Background"
-          className="object-cover"
+          className={"object-cover " + (darkBackground ? "bg-[#1F1F1F]" : "")}
+          priority
         />
         <div className="flex justify-center gap-6 xl:gap-32 absolute w-full bottom-64 text-white text-xl xl:text-2xl font-thin">
           <div>
-            <div>About us</div>
+            <div>
+              <Link href="#aboutUs" scroll={false}>
+                About us
+              </Link>
+            </div>
             <div className="footerUnderline"></div>
           </div>
           <div>
@@ -37,11 +42,11 @@ function Footer() {
             <span className="xl:ml-2">All rights reserved.</span>
           </div>
           <div className="border-t-2 border-gray-600 h-32 flex items-center flex justify-end gap-2">
-            <Image src="/facebook.png" width={30} height={30} alt="Facebook" />
+            <Image src="/facebook.png" width={24} height={24} alt="Facebook" />
             <Image
               src="/instagram.png"
-              width={30}
-              height={30}
+              width={25}
+              height={24}
               alt="Instagram"
             />
           </div>
