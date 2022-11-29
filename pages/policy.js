@@ -115,7 +115,7 @@ function privacyPolicy() {
         </p>
       </section>
 
-      <Footer darkBackground={true} />
+      <Footer darkBackground={true} goldFooter={false} />
     </>
   );
 }

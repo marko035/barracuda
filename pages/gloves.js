@@ -1,6 +1,5 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Image from "next/image";
 import React, { useState } from "react";
 
 function gloves() {
@@ -11,52 +10,52 @@ function gloves() {
   const gloveVariants = [
     {
       name: "Black",
-      color: "bg-black",
+      color: "#000000",
       variant: "black",
     },
     {
       name: "Red",
-      color: "bg-red-700",
+      color: "#E20623",
       variant: "red",
     },
     {
-      name: "Sky b.",
-      color: "bg-sky-300",
+      name: "Sky blue",
+      color: "#03CCFF",
       variant: "sky",
     },
     {
-      name: "Dark b.",
-      color: "bg-blue-900",
+      name: "Dark blue",
+      color: "#2869C8",
       variant: "dark",
     },
     {
-      name: "Navy b.",
-      color: "bg-indigo-900",
+      name: "Navy blue",
+      color: "#152C40",
       variant: "navy",
     },
     {
       name: "Orange",
-      color: "bg-orange-400",
+      color: "#FDAD79",
       variant: "orange",
     },
     {
       name: "Purple",
-      color: "bg-purple-700",
+      color: "#622773",
       variant: "purple",
     },
     {
       name: "Green",
-      color: "bg-green-600",
+      color: "#41B541",
       variant: "green",
     },
     {
       name: "Yellow",
-      color: "bg-yellow-400",
+      color: "#F4EE27",
       variant: "yellow",
     },
     {
       name: "Grey",
-      color: "bg-gray-500",
+      color: "#AAAAAA",
       variant: "grey",
     },
   ];
@@ -65,8 +64,8 @@ function gloves() {
     <>
       <Header />
 
-      <section className="glovesTopSection flex min-h-screen pt-16">
-        <div className="text-white text-3xl p-32 font-extralight">
+      <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
+        <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
           <p className="pb-8">
             <span className="text-green-600">
               Barracuda billiard & pool gloves
@@ -106,9 +105,9 @@ function gloves() {
           </p>
         </div>
 
-        <div className="h-full text-2xl py-32 text-center text-gray-400">
+        <div className="h-full text-xl xl:text-2xl text-center text-gray-400">
           <p className="text-white">
-            Available in 10 colors you can chose from
+            Available in 10 colors you can choose from
           </p>
 
           <div className="flex flex-col justify-items-stretch mt-6">
@@ -160,29 +159,27 @@ function gloves() {
         </div>
       </section>
 
-      <section className="flex py-20 px-32 min-h-screen">
+      <section className="flex py-10 p-6 xl:px-32 min-h-screen flex-col xl:flex-row">
         <div className="flex-1">
           <h1 className="text-green-600 text-3xl font-light">
             Barracuda Billiard glove
           </h1>
 
-          <div className="grid grid-cols-10 gap-x-2 w-[600px] text-gray-400 h-[70px] text-xs cursor-pointer">
+          <div className="grid grid-cols-5 xl:grid-cols-10 gap-x-2 w-[300ox] xl:w-[642px] text-gray-400 xl:h-[70px] text-xs cursor-pointer">
             {gloveVariants.map((glove) => (
               <div
                 key={glove.name}
-                className={
-                  "py-1 cursor-pointer " +
-                  (variant === glove.variant
-                    ? "border-b-4 border-b-" + glove.color.slice(3)
-                    : "")
-                }
+                className="py-1 cursor-pointer border-b-4"
+                style={{
+                  borderBottomColor:
+                    variant === glove.variant ? glove.color : "transparent",
+                }}
                 onClick={() => setVariant(glove.variant)}
               >
                 <span>{glove.name}</span>
                 <div
-                  className={
-                    "flex justify-center items-center h-12 " + glove.color
-                  }
+                  style={{ backgroundColor: glove.color }}
+                  className="flex justify-center items-center h-12"
                 >
                   {variant === glove.variant ? (
                     <span className="text-white text-3xl">&#10003;</span>
@@ -192,117 +189,59 @@ function gloves() {
             ))}
           </div>
 
-          {/* {gloveVariants.map((glove) =>
-            variant === glove.variant ? (
-              <React.Fragment key={glove.variant}>
-                {imageNumber === 1 ? (
-                  <Image
-                    key={glove.variant + "1"}
-                    width={600}
-                    height={600}
-                    src={`/gloves/${glove.variant}-1.jpg`}
-                    className="mt-4"
-                    alt="Glove Preview"
-                  />
-                ) : null}
-                {imageNumber === 1 ? (
-                  <Image
-                    key={glove.variant + "2"}
-                    width={600}
-                    height={600}
-                    src={`/gloves/${glove.variant}-2.jpg`}
-                    className="mt-4 hidden"
-                    alt="Glove Preview"
-                  />
-                ) : null}
-                {imageNumber === 3 ? (
-                  <Image
-                    key={glove.variant + "3"}
-                    width={600}
-                    height={600}
-                    src={`/gloves/${glove.variant}-3.jpg`}
-                    className="mt-4"
-                    alt="Glove Preview"
-                  />
-                ) : null}
-                {imageNumber === 4 ? (
-                  <Image
-                    key={glove.variant + "4"}
-                    width={600}
-                    height={600}
-                    src={`/gloves/${glove.variant}-4.jpg`}
-                    className="mt-4"
-                    alt="Glove Preview"
-                  />
-                ) : null}
-              </React.Fragment>
-            ) : null
-          )} */}
-
-          <Image
-            width={600}
-            height={400}
-            src={`/compressed/${variant}-${imageNumber}.webp`}
-            className="mt-4"
+          <img
+            src={`/gloves/${variant}-${imageNumber}.webp`}
+            className="mt-4 w-[100%] xl:w-[642px] h-[auto] xl:h-[400px]"
             alt="Glove Preview"
-            priority
           />
 
-          <div className="flex items-center ml-[-80px]">
-            <div className="w-20 h-20 mt-8 leftArrow"></div>
+          <div className="flex items-center xl:ml-[-80px] before:none after:none">
+            <div className="hidden xl:block w-20 h-20 mt-8 leftArrow"></div>
 
             <div
               key={variant}
-              className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-[600px] imageCarousel cursor-pointer"
+              className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-full xl:w-[642px] imageCarousel cursor-pointer"
             >
-              <Image
-                width={200}
-                height={133}
-                src={`/compressed/${variant}-1.webp`}
+              <img
+                className="w-[100px] xl:w-[214px] h-auto"
+                src={`/gloves/${variant}-1.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(1)}
-                priority
               />
-              <Image
-                width={200}
-                height={133}
-                src={`/compressed/${variant}-2.webp`}
+              <img
+                className="w-[100px] xl:w-[214px] h-auto"
+                src={`/gloves/${variant}-2.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(2)}
-                priority
               />
-              <Image
-                width={200}
-                height={133}
-                src={`/compressed/${variant}-3.webp`}
+              <img
+                className="w-[100px] xl:w-[214px] h-auto"
+                src={`/gloves/${variant}-3.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(3)}
-                priority
               />
-              <Image
-                width={200}
-                height={133}
-                src={`/compressed/${variant}-4.webp`}
+              <img
+                className="w-[100px] xl:w-[214px] h-auto"
+                src={`/gloves/${variant}-4.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(4)}
-                priority
               />
             </div>
 
-            <div className="w-20 h-20 mt-8 rightArrow"></div>
+            <div className="hidden xl:block w-20 h-20 mt-8 rightArrow"></div>
           </div>
-          <div className="flex justify-between text-2xl w-[600px] mt-2">
+          <div className="flex justify-between text-md xl:text-2xl mt-2 xl:w-[642px]">
             <span>$25.00</span>
             <span>FREE SHIPPING</span>
           </div>
         </div>
 
-        <div className="flex-1 text-xl">
-          <div className="mt-20 w-[500px] mx-auto">
+        <div className="flex-1 text-xs xl:text-xl">
+          <div className="mt-20 xl:w-[500px] mx-auto">
             <div className="border-b-2 border-b-green-600 p-[10px] flex justify-between">
               <span className="mr-10 flex-1">CHOOSE HAND</span>
-              <div className="flex-1 flex">
-                <div className="flex-1">
+              <div className="flex gap-2">
+                <div className="mr-2">
                   <input
                     className="mr-2"
                     type="radio"
@@ -312,9 +251,9 @@ function gloves() {
                   />
                   <label htmlFor="leftHand">left</label>
                 </div>
-                <div className="flex-1">
+                <div className="mr-2">
                   <input
-                    className="ml-6 mr-2"
+                    className="mr-2"
                     type="radio"
                     name="hand"
                     value="right"
@@ -326,9 +265,20 @@ function gloves() {
             </div>
 
             <div className="border-b-2 border-b-green-600 p-[10px] flex justify-between">
-              <span className="mr-10 flex-1">CHOOSE SIZE</span>
-              <div className="flex-1 flex">
-                <div className="flex-1">
+              <span className="mr-0">CHOOSE SIZE</span>
+              <div className="flex gap-2">
+                <div className="mr-2">
+                  <input
+                    className="mr-2"
+                    type="radio"
+                    name="size"
+                    value="SMALL"
+                    id="smallSize"
+                  />
+                  <label htmlFor="smallSize">small</label>
+                </div>
+
+                <div className="mr-2">
                   <input
                     className="mr-2"
                     type="radio"
@@ -339,9 +289,9 @@ function gloves() {
                   <label htmlFor="mediumSize">medium</label>
                 </div>
 
-                <div className="flex-1">
+                <div className="mr-2">
                   <input
-                    className="ml-6 mr-2"
+                    className="mr-2"
                     type="radio"
                     name="size"
                     value="large"
@@ -353,7 +303,7 @@ function gloves() {
             </div>
 
             <div className="border-b-2 border-b-green-600 p-[10px] flex justify-between">
-              <span className="mr-10 flex-1">CHOOSE SIZE</span>
+              <span className="mr-10 flex-1">QUANTITY</span>
 
               <div className="flex items-center gap-4">
                 <span
@@ -382,31 +332,36 @@ function gloves() {
               add to cart
             </button>
             <button className="w-full text-green-600 bg-white border-2 border-green-600 rounded-md mt-6 p-2">
-              go to card
+              go to cart
             </button>
 
             <div className="w-full flex justify-center mt-10 gap-2">
-              <Image
+              <img
                 src="/applePay.png"
-                width={94}
-                height={93}
+                className="w-[50px] xl:w-[90px]"
                 alt="ApplePay"
               />
-              <Image
+              <img
                 src="/googlePay.png"
-                width={94}
-                height={93}
+                className="w-[50px] xl:w-[90px]"
                 alt="GooglePay"
               />
-              <Image src="/paypal.png" width={93} height={93} alt="Paypal" />
+              <img
+                src="/paypal.png"
+                className="w-[50px] xl:w-[90px]"
+                alt="Paypal"
+              />
             </div>
 
             <div className="w-full flex justify-center mt-2 gap-2">
-              <Image src="/visa.png" width={94} height={94} alt="Visa" />
-              <Image
+              <img
+                src="/visa.png"
+                className="w-[50px] xl:w-[90px]"
+                alt="Visa"
+              />
+              <img
                 src="/mastercard.png"
-                width={93}
-                height={94}
+                className="w-[50px] xl:w-[90px]"
                 alt="Mastercard"
               />
             </div>
@@ -414,7 +369,7 @@ function gloves() {
         </div>
       </section>
 
-      <Footer darkBackground={false} />
+      <Footer darkBackground={false} goldFooter={false} />
     </>
   );
 }

@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-function Header() {
+function Header({ goldLogo }) {
   const [sidebarActive, setSidebarActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -27,10 +27,10 @@ function Header() {
         }
       >
         <div>
-          <Image
-            src="/logo.png"
-            width={209}
-            height={51}
+          <img
+            src={goldLogo ? "goldLogo.svg" : "/logo.svg"}
+            width={150}
+            height={40}
             alt="logo"
             className="object-contain"
           />
@@ -38,19 +38,27 @@ function Header() {
         <div className="flex sm:text-sm items-stretch h-[75px] box-content">
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/">HOME</Link>
-            <div className="headerUnderline"></div>
+            <div
+              className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
+            ></div>
           </div>
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/gloves">GLOVES</Link>
-            <div className="headerUnderline"></div>
+            <div
+              className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
+            ></div>
           </div>
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/holders">HOLDERS</Link>
-            <div className="headerUnderline"></div>
+            <div
+              className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
+            ></div>
           </div>
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/cart">CART</Link>
-            <div className="headerUnderline"></div>
+            <div
+              className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
+            ></div>
           </div>
         </div>
       </header>
@@ -59,9 +67,24 @@ function Header() {
         className="z-20 fixed top-10 right-10 md:hidden"
         onClick={() => setSidebarActive(!sidebarActive)}
       >
-        <div className="w-[30px] h-[2px] bg-green-600 mb-2"></div>
-        <div className="w-[30px] h-[2px] bg-green-600 mb-2"></div>
-        <div className="w-[30px] h-[2px] bg-green-600 mb-2"></div>
+        <div
+          className={
+            "w-[30px] h-[2px] bg-green-600 mb-2" +
+            (goldLogo ? " bg-[#C7A15A]" : "")
+          }
+        ></div>
+        <div
+          className={
+            "w-[30px] h-[2px] bg-green-600 mb-2" +
+            (goldLogo ? " bg-[#C7A15A]" : "")
+          }
+        ></div>
+        <div
+          className={
+            "w-[30px] h-[2px] bg-green-600 mb-2" +
+            (goldLogo ? " bg-[#C7A15A]" : "")
+          }
+        ></div>
       </div>
 
       {sidebarActive && (

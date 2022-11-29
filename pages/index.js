@@ -15,9 +15,9 @@ export default function Home() {
 
       <Header />
 
-      <section className="w-screen relative h-[800px] xl:h-[1000px]">
-        <Image src="/main.png" fill alt="Background" className="object-cover" />
-        <Image
+      <section className="w-screen relative">
+        <img src="/main.svg" alt="Background" className="object-cover w-full" />
+        <img
           src="/small-logo.png"
           width={180}
           height={180}
@@ -28,11 +28,11 @@ export default function Home() {
       </section>
 
       <section className="p-10 xl:px-20">
-        <h1 className="w-20 text-6xl font-medium ml-0 xl:ml-20 leading-10">
+        <h1 className="w-20 text-4xl xl:text-6xl font-medium ml-0 xl:ml-20 leading-10">
           about us
         </h1>
-        <div className="flex pt-4 px-0 xl:px-10 gap-20 flex-col xl:flex-row">
-          <div className="font-light text-3xl flex-1 pl-0 xl:pl-32">
+        <div className="flex pt-4 px-0 xl:px-10 gap-10 xl:gap-20 flex-col xl:flex-row text-xl xl:text-3xl">
+          <div className="font-light flex-1 pl-0 xl:pl-32">
             Our mission is to promote the beautiful game of billiards, bring
             comfort to players worldwide and support our custormers enjoyment on
             the table by creating innovative equipment that improves the
@@ -41,7 +41,7 @@ export default function Home() {
             Furthermore we bring style to the table with an array of unique
             color choices.
           </div>
-          <div className="font-light text-3xl flex-1 pr-0 xl:pr-32">
+          <div className="font-light flex-1 pr-0 xl:pr-32">
             <span className="text-green-600">Barracuda Billiards</span> is proud
             of our team of proven professionals with extensive experience in the
             game. <br />
@@ -56,8 +56,8 @@ export default function Home() {
 
       <section className="text-white">
         <div className="flex justify-center pt-20">
-          <Image
-            src="/lets.png"
+          <img
+            src="/lets.svg"
             alt="lets"
             width={404}
             height={274}
@@ -65,7 +65,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="bg-[#1F1F1F] px-10 xl:px-20 py-32">
+        <div className="bg-[#1F1F1F] px-10 xl:px-20 py-48 xl:py-32">
           <h1 className="w-20 text-6xl font-medium ml-0 xl:ml-20 leading-10">
             our <br />
             products
@@ -73,7 +73,7 @@ export default function Home() {
 
           <div className="flex flex-col xl:flex-row justify-center gap-16 xl:gap-8 my-20 text-center">
             <div className="border-green-600 border w-full xl:w-1/3 flex flex-col items-center bg-[#232323]">
-              <Image
+              <img
                 src="/glove.png"
                 alt="lets"
                 width={165}
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
 
             <div className="border-green-600 border w-full xl:w-1/3 flex flex-col items-center bg-[#232323]">
-              <Image
+              <img
                 src="/holder.png"
                 alt="lets"
                 width={165}
@@ -119,7 +119,7 @@ export default function Home() {
         </p>
       </section>
 
-      <Footer darkBackground={false} />
+      <Footer darkBackground={false} goldFooter={false} />
     </>
   );
 }

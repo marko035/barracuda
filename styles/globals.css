@@ -49,6 +49,10 @@ a {
   margin-top: 5px;
 }
 
+.goldUnderline {
+  background: #c7a15a;
+}
+
 .navbarLink:hover .headerUnderline {
   width: 30px;
   transition: all 0.5s;
