@@ -10,6 +10,7 @@ export default function Home() {
       <Head>
         <title>Barracuda Billiards</title>
         <meta name="description" content="Billiard gloves and holders shop" />
+        <meta name="color-scheme" content="light only" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
