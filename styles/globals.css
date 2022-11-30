@@ -50,7 +50,7 @@ a {
 }
 
 .goldUnderline {
-  background: #c7a15a;
+  background: #d9af62;
 }
 
 .navbarLink:hover .headerUnderline {
@@ -63,8 +63,8 @@ a {
     to right,
     #0f0f0f 0%,
     #0f0f0f 50%,
-    #1f1f1f 50%,
-    #1f1f1f 100%
+    #212121 50%,
+    #212121 100%
   );
 }
 
@@ -81,8 +81,8 @@ a {
     to bottom right,
     transparent 0%,
     transparent 50%,
-    #1f1f1f 50%,
-    #1f1f1f 100%
+    #212121 50%,
+    #212121 100%
   );
   transform: rotate(135deg);
 }
@@ -92,8 +92,8 @@ a {
     to bottom right,
     transparent 0%,
     transparent 50%,
-    #1f1f1f 50%,
-    #1f1f1f 100%
+    #212121 50%,
+    #212121 100%
   );
   transform: rotate(315deg);
 }

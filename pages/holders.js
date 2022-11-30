@@ -19,7 +19,7 @@ function holders() {
       <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
           <p className="">
-            <span className="text-[#C7A15A]">
+            <span className="text-[#D9AF62]">
               PCH is Premium Cue Holder by Barracuda.
             </span>{" "}
             <br />
@@ -37,17 +37,17 @@ function holders() {
           </p>
         </div>
 
-        <div className="h-full text-xl xl:text-2xl text-center text-gray-400 flex-1 flex flex-col justify-center items-center gap-10 text-[#C7A15A]">
+        <div className="h-full text-xl xl:text-2xl text-center text-gray-400 flex-1 flex flex-col justify-center items-center gap-10 text-[#D9AF62]">
           <p className="text-white mt-10 xl:mt-[-30px]">
             Available in 2 materials
           </p>
 
-          <div className="flex flex-col border-2 border-[#C7A15A] rounded-xl p-6">
+          <div className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6">
             <img src="/walnut.svg" alt="Walnut" className="w-32 h-28" />
             <span>Walnut</span>
           </div>
 
-          <div className="flex flex-col border-2 border-[#C7A15A] rounded-xl p-6">
+          <div className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6">
             <img src="/mahogany.svg" alt="Mahogany" className="w-32 h-28" />
             <span>Mahogany</span>
           </div>
@@ -56,7 +56,7 @@ function holders() {
 
       <section className="flex py-10 p-6 xl:px-32 min-h-screen flex-col xl:flex-row">
         <div className="flex-1">
-          <h1 className="text-[#C7A15A] text-3xl font-light">
+          <h1 className="text-[#D9AF62] text-3xl font-light">
             Barracuda Billiard cue holder
           </h1>
 
@@ -64,7 +64,7 @@ function holders() {
             <div
               style={{
                 borderBottomColor:
-                  variant === "walnut" ? "#C7A15A" : "transparent",
+                  variant === "walnut" ? "#D9AF62" : "transparent",
               }}
               className="py-1 cursor-pointer border-b-4 w-14"
               onClick={() => {
@@ -73,7 +73,7 @@ function holders() {
               }}
             >
               <span>Walnut</span>
-              <div className="flex justify-center items-center h-12 bg-[#C7A15A]">
+              <div className="flex justify-center items-center h-12 bg-[#D9AF62]">
                 {variant === "walnut" ? (
                   <span className="text-white text-3xl">&#10003;</span>
                 ) : null}
@@ -131,10 +131,10 @@ function holders() {
 
         <div className="flex-1 text-xs xl:text-xl">
           <div className="mt-20 xl:w-[500px] mx-auto">
-            <div className="border-b-2 border-b-[#C7A15A] p-[10px] flex justify-between">
+            <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
               {variant.toUpperCase()} CUE HOLDER
             </div>
-            <div className="border-b-2 border-b-[#C7A15A] p-[10px] flex justify-between">
+            <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
               <span className="mr-10 flex-1">QUANTITY</span>
 
               <div className="flex items-center gap-4">
@@ -160,10 +160,10 @@ function holders() {
               <span>{quantity * price}$</span>
             </div>
 
-            <button className="w-full border-2 border-transparent bg-[#C7A15A] rounded-md p-2 text-white mt-10">
+            <button className="w-full border-2 border-transparent bg-[#D9AF62] rounded-md p-2 text-white mt-10">
               add to cart
             </button>
-            <button className="w-full text-[#C7A15A] bg-white border-2 border-[#C7A15A] rounded-md mt-6 p-2">
+            <button className="w-full text-[#D9AF62] bg-white border-2 border-[#D9AF62] rounded-md mt-6 p-2">
               go to cart
             </button>
 

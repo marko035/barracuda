@@ -67,7 +67,7 @@ function gloves() {
       <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
           <p className="pb-8">
-            <span className="text-green-600">
+            <span className="text-[#00B901]">
               Barracuda billiard & pool gloves
             </span>{" "}
             are <br />{" "}
@@ -114,8 +114,8 @@ function gloves() {
             <div className="grid grid-cols-3 gap-x-3 items-center pt-6">
               <span>Black</span>
               <div className="flex justify-center gap-4">
-                <div className="h-16 w-16 bg-black"></div>
-                <div className="h-16 w-16 bg-orange-400"></div>
+                <div className="h-16 w-16 bg-[#000000]"></div>
+                <div className="h-16 w-16 bg-[#FDAD79]"></div>
               </div>
               <span>Orange</span>
             </div>
@@ -123,8 +123,8 @@ function gloves() {
             <div className="grid grid-cols-3 gap-x-3 items-center pt-6">
               <span>Red</span>
               <div className="flex justify-center gap-4">
-                <div className="h-16 w-16 bg-red-700"></div>
-                <div className="h-16 w-16 bg-purple-700"></div>
+                <div className="h-16 w-16 bg-[#E20623]"></div>
+                <div className="h-16 w-16 bg-[#622773]"></div>
               </div>
               <span>Purple</span>
             </div>
@@ -132,8 +132,8 @@ function gloves() {
             <div className="grid grid-cols-3 gap-x-3 items-center pt-6">
               <span>Sky Blue</span>
               <div className="flex justify-center gap-4">
-                <div className="h-16 w-16 bg-sky-300"></div>
-                <div className="h-16 w-16 bg-green-600"></div>
+                <div className="h-16 w-16 bg-[#03CCFF]"></div>
+                <div className="h-16 w-16 bg-[#41B541]"></div>
               </div>
               <span>Green</span>
             </div>
@@ -141,8 +141,8 @@ function gloves() {
             <div className="grid grid-cols-3 gap-x-3 items-center pt-6">
               <span>Dark Blue</span>
               <div className="flex justify-center gap-4">
-                <div className="h-16 w-16 bg-blue-900"></div>
-                <div className="h-16 w-16 bg-yellow-400"></div>
+                <div className="h-16 w-16 bg-[#2869C8]"></div>
+                <div className="h-16 w-16 bg-[#F4EE27]"></div>
               </div>
               <span>Yellow</span>
             </div>
@@ -150,8 +150,8 @@ function gloves() {
             <div className="grid grid-cols-3 gap-x-3 items-center pt-6">
               <span>Navy Blue</span>
               <div className="flex justify-center gap-4">
-                <div className="h-16 w-16 bg-indigo-900"></div>
-                <div className="h-16 w-16 bg-gray-500"></div>
+                <div className="h-16 w-16 bg-[#152C40]"></div>
+                <div className="h-16 w-16 bg-[#AAAAAA]"></div>
               </div>
               <span>Grey</span>
             </div>
@@ -161,7 +161,7 @@ function gloves() {
 
       <section className="flex py-10 p-6 xl:px-32 min-h-screen flex-col xl:flex-row">
         <div className="flex-1">
-          <h1 className="text-green-600 text-3xl font-light">
+          <h1 className="text-[#00B901] text-3xl font-light">
             Barracuda Billiard glove
           </h1>
 
@@ -238,7 +238,7 @@ function gloves() {
 
         <div className="flex-1 text-xs xl:text-xl">
           <div className="mt-20 xl:w-[500px] mx-auto">
-            <div className="border-b-2 border-b-green-600 p-[10px] flex justify-between">
+            <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
               <span className="mr-10 flex-1">CHOOSE HAND</span>
               <div className="flex gap-2">
                 <div className="mr-2">
@@ -264,7 +264,7 @@ function gloves() {
               </div>
             </div>
 
-            <div className="border-b-2 border-b-green-600 p-[10px] flex justify-between">
+            <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
               <span className="mr-0">CHOOSE SIZE</span>
               <div className="flex gap-2">
                 <div className="mr-2">
@@ -302,7 +302,7 @@ function gloves() {
               </div>
             </div>
 
-            <div className="border-b-2 border-b-green-600 p-[10px] flex justify-between">
+            <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
               <span className="mr-10 flex-1">QUANTITY</span>
 
               <div className="flex items-center gap-4">
@@ -328,10 +328,10 @@ function gloves() {
               <span>{quantity * price}$</span>
             </div>
 
-            <button className="w-full border-2 border-transparent bg-green-600 rounded-md p-2 text-white mt-10">
+            <button className="w-full border-2 border-transparent bg-[#00B901] rounded-md p-2 text-white mt-10">
               add to cart
             </button>
-            <button className="w-full text-green-600 bg-white border-2 border-green-600 rounded-md mt-6 p-2">
+            <button className="w-full text-[#00B901] bg-white border-2 border-[#00B901] rounded-md mt-6 p-2">
               go to cart
             </button>
 
