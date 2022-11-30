@@ -10,7 +10,7 @@ function Footer({ darkBackground, goldFooter }) {
           alt="Background"
           className={
             "w-full h-full object-cover " +
-            (darkBackground ? "bg-[#1F1F1F]" : "")
+            (darkBackground ? "bg-[#212121]" : "")
           }
         />
         <div className="flex justify-center gap-6 xl:gap-32 absolute w-full bottom-64 text-white text-xl xl:text-2xl font-thin">

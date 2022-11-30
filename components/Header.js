@@ -23,7 +23,7 @@ function Header({ goldLogo }) {
         className={
           "flex justify-between fixed px-8 items-center w-full text-white z-10 hidden md:flex" +
           (scrolled ? " text-white" : "") +
-          (scrolled ? " bg-[#1F1F1F]" : "")
+          (scrolled ? " bg-[#212121]" : "")
         }
       >
         <div>
@@ -69,20 +69,20 @@ function Header({ goldLogo }) {
       >
         <div
           className={
-            "w-[30px] h-[2px] bg-green-600 mb-2" +
-            (goldLogo ? " bg-[#C7A15A]" : "")
+            "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+            (goldLogo ? " bg-[#D9AF62]" : "")
           }
         ></div>
         <div
           className={
-            "w-[30px] h-[2px] bg-green-600 mb-2" +
-            (goldLogo ? " bg-[#C7A15A]" : "")
+            "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+            (goldLogo ? " bg-[#D9AF62]" : "")
           }
         ></div>
         <div
           className={
-            "w-[30px] h-[2px] bg-green-600 mb-2" +
-            (goldLogo ? " bg-[#C7A15A]" : "")
+            "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+            (goldLogo ? " bg-[#D9AF62]" : "")
           }
         ></div>
       </div>

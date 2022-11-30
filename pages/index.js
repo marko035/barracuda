@@ -42,7 +42,7 @@ export default function Home() {
             color choices.
           </div>
           <div className="font-light flex-1 pr-0 xl:pr-32">
-            <span className="text-green-600">Barracuda Billiards</span> is proud
+            <span className="text-[#00B901]">Barracuda Billiards</span> is proud
             of our team of proven professionals with extensive experience in the
             game. <br />
             <br />
@@ -65,14 +65,14 @@ export default function Home() {
           />
         </div>
 
-        <div className="bg-[#1F1F1F] px-10 xl:px-20 py-48 xl:py-32">
+        <div className="bg-[#212121] px-10 xl:px-20 py-48 xl:py-32">
           <h1 className="w-20 text-6xl font-medium ml-0 xl:ml-20 leading-10">
             our <br />
             products
           </h1>
 
           <div className="flex flex-col xl:flex-row justify-center gap-16 xl:gap-8 my-20 text-center">
-            <div className="border-green-600 border w-full xl:w-1/3 flex flex-col items-center bg-[#232323]">
+            <div className="border-[#00B901] border w-full xl:w-1/3 flex flex-col items-center bg-[#232323]">
               <img
                 src="/glove.png"
                 alt="lets"
@@ -85,12 +85,12 @@ export default function Home() {
                 Professional <br />
                 pool gloves
               </h2>
-              <h3 className="mb-8 underline text-xl text-green-600">
+              <h3 className="mb-8 underline text-xl text-[#00B901]">
                 <Link href="/gloves">LEARN MORE</Link>
               </h3>
             </div>
 
-            <div className="border-green-600 border w-full xl:w-1/3 flex flex-col items-center bg-[#232323]">
+            <div className="border-[#00B901] border w-full xl:w-1/3 flex flex-col items-center bg-[#232323]">
               <img
                 src="/holder.png"
                 alt="lets"
@@ -103,7 +103,7 @@ export default function Home() {
                 Professional <br />
                 pool cue holders
               </h2>
-              <h3 className="mb-8 underline text-xl text-green-600">
+              <h3 className="mb-8 underline text-xl text-[#00B901]">
                 LEARN MORE
               </h3>
             </div>

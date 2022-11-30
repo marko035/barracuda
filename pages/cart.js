@@ -16,13 +16,13 @@ function cart() {
     <>
       <Header />
 
-      <section className="bg-[#1F1F1F] flex h-[400px] p-64 text-white">
+      <section className="bg-[#212121] flex h-[400px] p-64 text-white">
         <div className="flex-1 flex flex-col font-thin text-2xl">
           {items.map((item, index) => (
             <div key={index} className="bg-[#232323] py-4 px-6">
               <div className="mb-4">
                 Barracuda Billiard
-                <span className="text-green-600"> {item.type}</span>
+                <span className="text-[#00B901]"> {item.type}</span>
               </div>
               <div className="flex">
                 <div className="w-32 bg-red-600 flex items-center justify-center text-5xl mr-4">
@@ -31,7 +31,7 @@ function cart() {
                 <div className="flex flex-col justify-between flex-1">
                   <div>{item.hand}</div>
                   <div className="flex justify-between">
-                    <span className="text-green-600">free shipping</span>
+                    <span className="text-[#00B901]">free shipping</span>
                     <span>${item.price * item.quantity}.00</span>
                   </div>
                 </div>

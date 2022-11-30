@@ -6,8 +6,8 @@ function privacyPolicy() {
     <>
       <Header />
 
-      <section className="bg-[#1F1F1F] px-20 py-32">
-        <h1 className="text-green-600 font-light text-3xl mb-8">
+      <section className="bg-[#212121] px-20 py-32">
+        <h1 className="text-[#00B901] font-light text-3xl mb-8">
           Privacy Policy
         </h1>
 
