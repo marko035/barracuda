@@ -133,3 +133,7 @@ a {
 .shoppingCart {
   min-height: calc(100vh - 400px);
 }
+
+input[type="radio"] {
+  accent-color: black;
+}
