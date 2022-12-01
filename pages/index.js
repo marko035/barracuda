@@ -1,10 +1,17 @@
 import Head from "next/head";
-import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(cart);
+  }, []);
+
+  const [cart, setCart] = useState([]);
+
   return (
     <>
       <Head>
@@ -13,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header cart={cart} />
 
       <section className="w-screen relative">
         <img src="/main.svg" alt="Background" className="object-cover w-full" />

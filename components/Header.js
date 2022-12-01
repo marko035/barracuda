@@ -2,20 +2,25 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-function Header({ goldLogo }) {
-  const [sidebarActive, setSidebarActive] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
+function Header({ goldLogo, cart }) {
   useEffect(() => {
     const scrollHandler = (event) => {
       setScrolled(document.documentElement.scrollTop !== 0);
     };
 
     document.addEventListener("scroll", scrollHandler);
+
     return () => {
       document.removeEventListener("scroll", scrollHandler);
     };
   }, []);
+
+  const [sidebarActive, setSidebarActive] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const total = cart.reduce((acc, item) => {
+    return acc + item.quantity * item.price;
+  }, 0);
 
   return (
     <>
@@ -35,7 +40,7 @@ function Header({ goldLogo }) {
             className="object-contain"
           />
         </div>
-        <div className="flex sm:text-sm items-stretch h-[75px] box-content">
+        <div className="flex sm:text-sm items-stretch h-[75px] box-content font-bold">
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/">HOME</Link>
             <div
@@ -59,6 +64,9 @@ function Header({ goldLogo }) {
             <div
               className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
             ></div>
+          </div>
+          <div className="flex flex-col p-4 items-start justify-center navbarLink mb-2">
+            ${total}.00
           </div>
         </div>
       </header>

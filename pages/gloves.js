@@ -1,68 +1,91 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 function gloves() {
+  useEffect(() => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(cart);
+  }, []);
+
+  const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
-  const [variant, setVariant] = useState("black");
+  const [variant, setVariant] = useState("#000000");
+  const [hand, setHand] = useState("left");
+  const [size, setSize] = useState("m");
   const price = 25;
   const gloveVariants = [
     {
       name: "Black",
       color: "#000000",
-      variant: "black",
     },
     {
       name: "Red",
       color: "#E20623",
-      variant: "red",
     },
     {
       name: "Sky blue",
       color: "#03CCFF",
-      variant: "sky",
     },
     {
       name: "Dark blue",
       color: "#2869C8",
-      variant: "dark",
     },
     {
       name: "Navy blue",
       color: "#152C40",
-      variant: "navy",
     },
     {
       name: "Orange",
       color: "#FDAD79",
-      variant: "orange",
     },
     {
       name: "Purple",
       color: "#622773",
-      variant: "purple",
     },
     {
       name: "Green",
       color: "#41B541",
-      variant: "green",
     },
     {
       name: "Yellow",
       color: "#F4EE27",
-      variant: "yellow",
     },
     {
       name: "Grey",
       color: "#AAAAAA",
-      variant: "grey",
     },
   ];
 
+  const addToCart = () => {
+    const item = {
+      id: `glove-${variant}-${hand}-${size}`,
+      type: "glove",
+      variant,
+      hand,
+      size,
+      quantity,
+      price,
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartItem = cart.find((cartItem) => cartItem.id === item.id);
+    if (cartItem) {
+      cartItem.quantity += quantity;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart);
+  };
+
   return (
     <>
-      <Header />
+      <Header cart={cart} />
 
       <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
@@ -172,16 +195,16 @@ function gloves() {
                 className="py-1 cursor-pointer border-b-4"
                 style={{
                   borderBottomColor:
-                    variant === glove.variant ? glove.color : "transparent",
+                    variant === glove.color ? glove.color : "transparent",
                 }}
-                onClick={() => setVariant(glove.variant)}
+                onClick={() => setVariant(glove.color)}
               >
                 <span>{glove.name}</span>
                 <div
                   style={{ backgroundColor: glove.color }}
                   className="flex justify-center items-center h-12"
                 >
-                  {variant === glove.variant ? (
+                  {variant === glove.color ? (
                     <span className="text-white text-3xl">&#10003;</span>
                   ) : null}
                 </div>
@@ -190,7 +213,7 @@ function gloves() {
           </div>
 
           <img
-            src={`/gloves/${variant}-${imageNumber}.webp`}
+            src={`/gloves/${variant.slice(1)}-${imageNumber}.webp`}
             className="mt-4 w-[100%] xl:w-[642px] h-[auto] xl:h-[400px]"
             alt="Glove Preview"
           />
@@ -204,25 +227,25 @@ function gloves() {
             >
               <img
                 className="w-[100px] xl:w-[214px] h-auto"
-                src={`/gloves/${variant}-1.webp`}
+                src={`/gloves/${variant.slice(1)}-1.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(1)}
               />
               <img
                 className="w-[100px] xl:w-[214px] h-auto"
-                src={`/gloves/${variant}-2.webp`}
+                src={`/gloves/${variant.slice(1)}-2.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(2)}
               />
               <img
                 className="w-[100px] xl:w-[214px] h-auto"
-                src={`/gloves/${variant}-3.webp`}
+                src={`/gloves/${variant.slice(1)}-3.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(3)}
               />
               <img
                 className="w-[100px] xl:w-[214px] h-auto"
-                src={`/gloves/${variant}-4.webp`}
+                src={`/gloves/${variant.slice(1)}-4.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(4)}
               />
@@ -248,6 +271,8 @@ function gloves() {
                     name="hand"
                     value="left"
                     id="leftHand"
+                    checked={hand === "left"}
+                    onChange={() => setHand("left")}
                   />
                   <label htmlFor="leftHand">left</label>
                 </div>
@@ -258,6 +283,8 @@ function gloves() {
                     name="hand"
                     value="right"
                     id="rightHand"
+                    checked={hand === "right"}
+                    onChange={() => setHand("right")}
                   />
                   <label htmlFor="rightHand">right</label>
                 </div>
@@ -272,8 +299,10 @@ function gloves() {
                     className="mr-2"
                     type="radio"
                     name="size"
-                    value="SMALL"
+                    value="s"
                     id="smallSize"
+                    checked={size === "s"}
+                    onChange={() => setSize("s")}
                   />
                   <label htmlFor="smallSize">small</label>
                 </div>
@@ -283,8 +312,10 @@ function gloves() {
                     className="mr-2"
                     type="radio"
                     name="size"
-                    value="medium"
+                    value="m"
                     id="mediumSize"
+                    checked={size === "m"}
+                    onChange={() => setSize("m")}
                   />
                   <label htmlFor="mediumSize">medium</label>
                 </div>
@@ -294,8 +325,10 @@ function gloves() {
                     className="mr-2"
                     type="radio"
                     name="size"
-                    value="large"
+                    value="l"
                     id="largeSize"
+                    checked={size === "l"}
+                    onChange={() => setSize("l")}
                   />
                   <label htmlFor="largeSize">large</label>
                 </div>
@@ -328,12 +361,17 @@ function gloves() {
               <span>{quantity * price}$</span>
             </div>
 
-            <button className="w-full border-2 border-transparent bg-[#00B901] rounded-md p-2 text-white mt-10">
+            <button
+              onClick={() => addToCart()}
+              className="w-full border-2 border-transparent bg-[#00B901] rounded-md p-2 text-white mt-10"
+            >
               add to cart
             </button>
-            <button className="w-full text-[#00B901] bg-white border-2 border-[#00B901] rounded-md mt-6 p-2">
-              go to cart
-            </button>
+            <Link href="/cart" passHref>
+              <button className="w-full text-[#00B901] bg-white border-2 border-[#00B901] rounded-md mt-6 p-2">
+                go to cart
+              </button>
+            </Link>
 
             <div className="w-full flex justify-center mt-10 gap-2">
               <img

@@ -1,8 +1,15 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 function holders() {
+  useEffect(() => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(cart);
+  }, []);
+
+  const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
   const [variant, setVariant] = useState("walnut");
@@ -12,9 +19,31 @@ function holders() {
   };
   const price = 80;
 
+  const addToCart = () => {
+    const item = {
+      id: `holder-${variant}`,
+      type: "holder",
+      variant,
+      quantity,
+      price,
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartItem = cart.find((cartItem) => cartItem.id === item.id);
+    if (cartItem) {
+      cartItem.quantity += quantity;
+    } else {
+      cart.push(item);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart);
+  };
+
   return (
     <>
-      <Header goldLogo={true} />
+      <Header goldLogo={true} cart={cart} />
 
       <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
@@ -160,12 +189,17 @@ function holders() {
               <span>{quantity * price}$</span>
             </div>
 
-            <button className="w-full border-2 border-transparent bg-[#D9AF62] rounded-md p-2 text-white mt-10">
+            <button
+              onClick={() => addToCart()}
+              className="w-full border-2 border-transparent bg-[#D9AF62] rounded-md p-2 text-white mt-10"
+            >
               add to cart
             </button>
-            <button className="w-full text-[#D9AF62] bg-white border-2 border-[#D9AF62] rounded-md mt-6 p-2">
-              go to cart
-            </button>
+            <Link href="/cart" passHref>
+              <button className="w-full text-[#D9AF62] bg-white border-2 border-[#D9AF62] rounded-md mt-6 p-2">
+                go to cart
+              </button>
+            </Link>
 
             <div className="w-full flex justify-center mt-10 gap-2">
               <img
