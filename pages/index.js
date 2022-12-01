@@ -111,7 +111,7 @@ export default function Home() {
                 pool cue holders
               </h2>
               <h3 className="mb-8 underline text-xl text-[#00B901]">
-                LEARN MORE
+                <Link href="/holders">LEARN MORE</Link>
               </h3>
             </div>
           </div>
