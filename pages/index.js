@@ -118,12 +118,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="m-6 xl:m-32 text-3xl font-light">
+      <section className="m-6 xl:m-32 text-xl xl:text-3xl font-light">
         <p>Want to become a part of Barraccuda family and sell our products?</p>
         <p>
           If you are online reseller, pool hall or a pool player we have great
           packages for everyone!
         </p>
+
+        <a href="mailto:contact@barracudabilliards.com">
+          <button className="w-[200px] border-2 border-transparent bg-[#00B901] rounded-md p-2 text-white mt-10">
+            Contact us
+          </button>
+        </a>
       </section>
 
       <Footer darkBackground={false} goldFooter={false} />

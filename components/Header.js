@@ -96,7 +96,7 @@ function Header({ goldLogo, cart }) {
       </div>
 
       {sidebarActive && (
-        <header className="flex flex-col items-center justify-center gap-20 font-light text-2xl md:hidden fixed w-screen h-screen bg-black z-10 text-white">
+        <header className="flex flex-col items-center justify-center gap-16 font-light text-2xl md:hidden fixed w-screen h-screen bg-black z-10 text-white">
           <h1>
             <Link href="/">HOME</Link>
           </h1>
@@ -109,6 +109,7 @@ function Header({ goldLogo, cart }) {
           <h1>
             <Link href="/cart">CART</Link>
           </h1>
+          <h1>${total}.00</h1>
 
           <div
             onClick={() => setSidebarActive(false)}

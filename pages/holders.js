@@ -17,7 +17,7 @@ function holders() {
     walnut: 9,
     mahogany: 5,
   };
-  const price = 80;
+  const price = 69;
 
   const addToCart = () => {
     const item = {
@@ -153,7 +153,7 @@ function holders() {
             <div className="hidden xl:block w-20 h-20 mt-8 rightArrow"></div>
           </div>
           <div className="flex justify-between text-md xl:text-2xl mt-2 xl:w-[600px]">
-            <span>$80.00</span>
+            <span>${price}.00</span>
             <span>FREE SHIPPING</span>
           </div>
         </div>
