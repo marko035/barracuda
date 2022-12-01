@@ -81,6 +81,12 @@ function gloves() {
 
     localStorage.setItem("cart", JSON.stringify(cart));
     setCart(cart);
+
+    var snackBar = document.getElementById("snackbar");
+    snackBar.classList.toggle("show");
+    setTimeout(function () {
+      snackBar.classList.toggle("show");
+    }, 3000);
   };
 
   return (
@@ -406,6 +412,8 @@ function gloves() {
           </div>
         </div>
       </section>
+
+      <div id="snackbar">Product has been added to the cart</div>
 
       <Footer darkBackground={false} goldFooter={false} />
     </>
