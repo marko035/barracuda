@@ -65,7 +65,7 @@ function cart() {
                 clear all
               </span>
             </div>
-            <div className="flex flex-col font-thin text-sm xl:text-2xl h-[600px] overflow-y-scroll whitespace-nowrap">
+            <div className="flex flex-col font-thin text-sm xl:text-2xl max-h-[600px] overflow-y-scroll whitespace-nowrap">
               {cart.map((item, index) => (
                 <div className="flex w-full" key={index}>
                   <div className="flex-1 bg-[#232323] py-4 px-6 my-2">
