@@ -128,12 +128,12 @@ function gloves() {
           </p>
         </div>
 
-        <div className="h-full text-xl xl:text-2xl text-center text-gray-400">
-          <p className="text-white">
+        <div className="h-full text-xl xl:text-2xl text-center text-gray-400 flex-1 flex flex-col justify-center items-center gap-10 text-[#D9AF62]">
+          <p className="text-white mt-10 xl:mt-[-30px]">
             Available in 10 colors you can choose from
           </p>
 
-          <div className="flex flex-col justify-items-stretch mt-6">
+          <div className="flex flex-col justify-items-stretch">
             <div className="grid grid-cols-3 gap-x-3 items-center pt-6">
               <span>Black</span>
               <div className="flex justify-center gap-4">
