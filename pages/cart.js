@@ -51,7 +51,7 @@ function cart() {
     <>
       <Header cart={cart} />
 
-      <section className="shoppingCart bg-[#212121] flex flex-col xl:flex-row p-10 pt-20 xl:p-32 text-white">
+      <section className="shoppingCart bg-[#212121] flex flex-col xl:flex-row p-6 pt-20 xl:p-32 text-white">
         {cart.length ? (
           <div className="flex-1">
             <div
@@ -78,12 +78,12 @@ function cart() {
                         <img
                           src={`/${item.variant}.svg`}
                           alt={item.variant}
-                          className="w-10 xl:w-32"
+                          className="w-20 xl:w-32 mr-4"
                         />
                       ) : (
                         <div
                           style={{ backgroundColor: item.variant }}
-                          className="w-10 xl:w-32 flex items-center justify-center text-5xl mr-4"
+                          className="w-20 xl:w-32 flex items-center justify-center text-5xl mr-4"
                         >
                           <span>{item.size.toUpperCase()}</span>
                         </div>
@@ -97,7 +97,7 @@ function cart() {
                           <span>${item.price * item.quantity}.00</span>
                         </div>
                       </div>
-                      <div className="flex flex-col items-center gap-4 ml-2">
+                      <div className="flex flex-col items-center gap-2 ml-2">
                         <span
                           onClick={() => setQuantity(item, 1)}
                           className="cursor-pointer w-6 h-6 rounded-full border flex items-center justify-center"
