@@ -1,10 +1,18 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useState, useEffect } from "react";
 
 function privacyPolicy() {
+  useEffect(() => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(cart);
+  }, []);
+
+  const [cart, setCart] = useState([]);
+
   return (
     <>
-      <Header />
+      <Header cart={cart} />
 
       <section className="bg-[#212121] px-20 py-32">
         <h1 className="text-[#00B901] font-light text-3xl mb-8">
