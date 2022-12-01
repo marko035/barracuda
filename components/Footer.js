@@ -55,8 +55,20 @@ function Footer({ darkBackground, goldFooter }) {
             <span className="xl:ml-2">All rights reserved.</span>
           </div>
           <div className="border-t-2 border-[gray] h-32 flex items-center flex justify-end gap-2">
-            <img src="/facebook.png" width={24} height={24} alt="Facebook" />
-            <img src="/instagram.png" width={25} height={24} alt="Instagram" />
+            <a href="https://facebook.com/barracudapoolgloves/" target="_blank">
+              <img src="/facebook.png" width={24} height={24} alt="Facebook" />
+            </a>
+            <a
+              href="https://www.instagram.com/barracudabilliards"
+              target="_blank"
+            >
+              <img
+                src="/instagram.png"
+                width={25}
+                height={24}
+                alt="Instagram"
+              />
+            </a>
           </div>
         </div>
       </footer>

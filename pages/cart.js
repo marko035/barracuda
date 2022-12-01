@@ -15,9 +15,11 @@ function cart() {
     const newCart = cart.map((currentItem) => {
       if (currentItem.id !== item.id) return currentItem;
 
+      const newQuantity =
+        currentItem.quantity + change < 0 ? 0 : currentItem.quantity + change;
       return {
         ...currentItem,
-        quantity: currentItem.quantity + change,
+        quantity: newQuantity,
       };
     });
 
@@ -37,13 +39,21 @@ function cart() {
     localStorage.removeItem("cart");
   };
 
+  const getTotal = () => {
+    return cart.reduce((acc, item) => {
+      return acc + item.quantity * item.price;
+    }, 0);
+  };
+
+  const buy = () => {};
+
   return (
     <>
       <Header cart={cart} />
 
-      <section className="bg-[#212121] flex h-[400px] p-32 text-white h-screen">
+      <section className="shoppingCart bg-[#212121] flex flex-col xl:flex-row p-10 pt-20 xl:p-32 text-white">
         {cart.length ? (
-          <div className="flex-1 ">
+          <div className="flex-1">
             <div
               className="flex justify-end text-red-500"
               style={{ display: cart.length ? "flex" : "none" }}
@@ -55,9 +65,9 @@ function cart() {
                 clear all
               </span>
             </div>
-            <div className="flex flex-col font-thin text-2xl h-[700px] overflow-y-scroll whitespace-nowrap">
+            <div className="flex flex-col font-thin text-sm xl:text-2xl h-[600px] overflow-y-scroll whitespace-nowrap">
               {cart.map((item, index) => (
-                <div className="flex" key={index}>
+                <div className="flex w-full" key={index}>
                   <div className="flex-1 bg-[#232323] py-4 px-6 my-2">
                     <div className="mb-4">
                       Barracuda Billiard
@@ -68,24 +78,26 @@ function cart() {
                         <img
                           src={`/${item.variant}.svg`}
                           alt={item.variant}
-                          className="w-32"
+                          className="w-10 xl:w-32"
                         />
                       ) : (
                         <div
                           style={{ backgroundColor: item.variant }}
-                          className="w-32 flex items-center justify-center text-5xl mr-4"
+                          className="w-10 xl:w-32 flex items-center justify-center text-5xl mr-4"
                         >
                           <span>{item.size.toUpperCase()}</span>
                         </div>
                       )}
                       <div className="flex flex-col justify-between flex-1">
                         <div>{item.hand || item.variant}</div>
-                        <div className="flex justify-between">
-                          <span className="text-[#00B901]">free shipping</span>
+                        <div className="flex flex-col-reverse xl:flex-row justify-between">
+                          <span className="text-[#00B901] text-xs xl:text-2xl mr-4">
+                            free shipping
+                          </span>
                           <span>${item.price * item.quantity}.00</span>
                         </div>
                       </div>
-                      <div className="flex flex-col items-center gap-4 ml-8">
+                      <div className="flex flex-col items-center gap-4 ml-2">
                         <span
                           onClick={() => setQuantity(item, 1)}
                           className="cursor-pointer w-6 h-6 rounded-full border flex items-center justify-center"
@@ -113,10 +125,54 @@ function cart() {
             </div>
           </div>
         ) : (
-          <div className="text-3xl">Shopping Cart is empty</div>
+          <div className="text-3xl w-full text-center">
+            Shopping Cart is empty
+          </div>
         )}
 
-        <div className="flex-1"></div>
+        {cart.length ? (
+          <div className="flex-1 flex flex-col items-center justify-center mt-20 xl:mt-0">
+            <div className="text-4xl">Total: ${getTotal()}.00</div>
+
+            <button
+              onClick={() => buy()}
+              className="w-full xl:w-1/2 border-2 border-transparent bg-[#00B901] rounded-md p-2 text-white mt-10"
+            >
+              buy
+            </button>
+
+            <div className="w-full flex justify-center mt-10 gap-2">
+              <img
+                src="/applePay.png"
+                className="w-[50px] xl:w-[90px]"
+                alt="ApplePay"
+              />
+              <img
+                src="/googlePay.png"
+                className="w-[50px] xl:w-[90px]"
+                alt="GooglePay"
+              />
+              <img
+                src="/paypal.png"
+                className="w-[50px] xl:w-[90px]"
+                alt="Paypal"
+              />
+            </div>
+
+            <div className="w-full flex justify-center mt-2 gap-2">
+              <img
+                src="/visa.png"
+                className="w-[50px] xl:w-[90px]"
+                alt="Visa"
+              />
+              <img
+                src="/mastercard.png"
+                className="w-[50px] xl:w-[90px]"
+                alt="Mastercard"
+              />
+            </div>
+          </div>
+        ) : null}
       </section>
 
       <Footer darkBackground={true} goldFooter={false} />
