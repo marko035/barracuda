@@ -131,7 +131,7 @@ function cart() {
         )}
 
         {cart.length ? (
-          <div className="flex-1 flex flex-col items-center justify-center mt-20 xl:mt-0 xl:h-screen">
+          <div className="flex-1 flex flex-col items-center justify-center mt-20 xl:mt-[-100px] xl:h-screen">
             <div className="text-4xl">Total: ${getTotal()}.00</div>
 
             <button
