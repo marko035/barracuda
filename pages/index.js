@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
+    document.body.style.height = window.innerHeight + "px";
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(cart);
   }, []);
