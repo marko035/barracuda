@@ -95,7 +95,7 @@ function gloves() {
 
       <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
-          <p className="pb-8">
+          <p className="pb-8 mt-20 xl:mt-0">
             <span className="text-[#00B901]">
               Barracuda billiard & pool gloves
             </span>{" "}
@@ -135,7 +135,7 @@ function gloves() {
         </div>
 
         <div className="h-full text-xl xl:text-2xl text-center text-gray-400 flex-1 flex flex-col justify-center items-center gap-10 text-[#D9AF62]">
-          <p className="text-white mt-10 xl:mt-[-30px]">
+          <p className="text-white mt-20 xl:mt-[-30px]">
             Available in 10 colors you can choose from
           </p>
 
@@ -190,7 +190,7 @@ function gloves() {
 
       <section className="flex py-10 p-6 xl:px-32 min-h-screen flex-col xl:flex-row">
         <div className="flex-1">
-          <h1 className="text-[#00B901] text-3xl font-light">
+          <h1 className="text-[#212121] text-3xl font-light mb-6">
             Barracuda Billiard glove
           </h1>
 

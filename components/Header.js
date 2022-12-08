@@ -32,13 +32,15 @@ function Header({ goldLogo, cart }) {
         }
       >
         <div>
-          <img
-            src={goldLogo ? "goldLogo.svg" : "/logo.svg"}
-            width={150}
-            height={40}
-            alt="logo"
-            className="object-contain"
-          />
+          <Link href="/" passHref>
+            <img
+              src={goldLogo ? "/goldLogo.svg" : "/logo.svg"}
+              width={150}
+              height={40}
+              alt="logo"
+              className="object-contain"
+            />
+          </Link>
         </div>
         <div className="flex sm:text-sm items-stretch h-[75px] box-content font-bold">
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
@@ -65,34 +67,52 @@ function Header({ goldLogo, cart }) {
               className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
             ></div>
           </div>
-          <div className="flex flex-col p-4 items-start justify-center navbarLink mb-2">
+          <div
+            className={
+              "flex flex-col p-4 items-start justify-center navbarLink mb-2 text-[#00B901]" +
+              (goldLogo ? " text-[#D9AF62]" : "")
+            }
+          >
             ${total}.00
           </div>
         </div>
       </header>
 
       <div
-        className="z-20 fixed top-10 right-10 md:hidden"
+        className={
+          "z-20 fixed w-full md:hidden flex justify-between p-6 items-center" +
+          (scrolled ? " text-white" : "") +
+          (scrolled ? " bg-[#212121]" : "") +
+          (sidebarActive ? " hidden" : "")
+        }
         onClick={() => setSidebarActive(!sidebarActive)}
       >
-        <div
-          className={
-            "w-[30px] h-[2px] bg-[#00B901] mb-2" +
-            (goldLogo ? " bg-[#D9AF62]" : "")
-          }
-        ></div>
-        <div
-          className={
-            "w-[30px] h-[2px] bg-[#00B901] mb-2" +
-            (goldLogo ? " bg-[#D9AF62]" : "")
-          }
-        ></div>
-        <div
-          className={
-            "w-[30px] h-[2px] bg-[#00B901] mb-2" +
-            (goldLogo ? " bg-[#D9AF62]" : "")
-          }
-        ></div>
+        <img
+          src={goldLogo ? "/goldLogo.svg" : "/logo.svg"}
+          alt="Symphony of colors"
+          className="w-1/3"
+        />
+
+        <div>
+          <div
+            className={
+              "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+              (goldLogo ? " bg-[#D9AF62]" : "")
+            }
+          ></div>
+          <div
+            className={
+              "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+              (goldLogo ? " bg-[#D9AF62]" : "")
+            }
+          ></div>
+          <div
+            className={
+              "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+              (goldLogo ? " bg-[#D9AF62]" : "")
+            }
+          ></div>
+        </div>
       </div>
 
       {sidebarActive && (
@@ -109,11 +129,15 @@ function Header({ goldLogo, cart }) {
           <h1>
             <Link href="/cart">CART</Link>
           </h1>
-          <h1>${total}.00</h1>
+          <h1
+            className={"text-[#00B901]" + (goldLogo ? " text-[#D9AF62]" : "")}
+          >
+            ${total}.00
+          </h1>
 
           <div
             onClick={() => setSidebarActive(false)}
-            className="mt-20 bg-white text-black w-12 h-12 rounded-full flex justify-center items-center font-bold"
+            className="mt-20 bg-[#ED2056] text-black w-12 h-12 rounded-full flex justify-center items-center font-bold"
           >
             X
           </div>

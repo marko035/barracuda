@@ -27,7 +27,7 @@ export default function Home() {
         <img
           src="/symphony.svg"
           alt="Symphony of colors"
-          className="w-1/2 absolute left-auto right-auto bottom-1/4"
+          className="w-[80%] xl:w-1/3 absolute left-auto right-auto xl:right-0 bottom-1/4 xl:bottom-0 xl:m-10"
         />
       </section>
 
@@ -67,18 +67,18 @@ export default function Home() {
       </section>
 
       <section className="text-white">
-        <div className="flex justify-center pt-20">
+        <div className="flex justify-center px-20 xl:px-0">
           <img
             src="/lets.svg"
             alt="lets"
             width={404}
             height={274}
-            className="mb-[-130px]"
+            className="mb-[-100px] xl:mb-[-110px]"
           />
         </div>
 
         <div className="bg-[#101010] px-10 xl:px-20 py-48 xl:py-32">
-          <h1 className="w-20 text-6xl font-medium ml-0 xl:ml-20 leading-10">
+          <h1 className="w-20 text-4xl xl:text-6xl font-medium ml-0 xl:ml-20 leading-10">
             our <br />
             products
           </h1>
@@ -125,7 +125,7 @@ export default function Home() {
 
       <section
         id="contactUs"
-        className="m-6 xl:m-32 text-xl xl:text-3xl font-light"
+        className="xl:m-32 text-xl xl:text-3xl font-light p-10"
       >
         <p>Want to become a part of Barraccuda family and sell our products?</p>
         <p>
