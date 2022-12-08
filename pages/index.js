@@ -23,11 +23,11 @@ export default function Home() {
       <Header cart={cart} />
 
       <section className="w-screen h-screen relative bg-[#0c0c0c] flex flex-col justify-center items-center">
-        <img src="/main.svg" alt="Main" className="w-1/2" />
+        <img src="/main.svg" alt="Main" className="w-1/2 mb-[100px]" />
         <img
           src="/symphony.svg"
           alt="Symphony of colors"
-          className="w-1/3 absolute left-auto right-auto bottom-1/4"
+          className="w-1/2 absolute left-auto right-auto bottom-1/4"
         />
       </section>
 
