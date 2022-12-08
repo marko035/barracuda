@@ -22,19 +22,24 @@ export default function Home() {
 
       <Header cart={cart} />
 
-      <section className="w-screen relative">
-        <img src="/main.svg" alt="Background" className="object-cover w-full" />
+      <section className="w-screen h-screen relative bg-[#0c0c0c] flex justify-center items-center">
+        <img src="/main.svg" alt="Main" className="w-1/2" />
         <img
-          src="/small-logo.png"
-          width={180}
-          height={180}
-          alt="Small Logo"
-          className="absolute smallLogo"
-          id="aboutUs"
+          src="/symphony.svg"
+          alt="Symphony of colors"
+          className="w-1/3 absolute bottom-0 right-0 m-10"
         />
       </section>
 
-      <section className="p-10 xl:px-20">
+      <section className="p-10 xl:px-20 pt-0">
+        <img
+          src="/small-logo.svg"
+          width={180}
+          height={180}
+          alt="Small Logo"
+          className="smallLogo mb-10"
+          id="aboutUs"
+        />
         <h1 className="w-20 text-4xl xl:text-6xl font-medium ml-0 xl:ml-20 leading-10">
           about us
         </h1>
@@ -72,7 +77,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="bg-[#212121] px-10 xl:px-20 py-48 xl:py-32">
+        <div className="bg-[#101010] px-10 xl:px-20 py-48 xl:py-32">
           <h1 className="w-20 text-6xl font-medium ml-0 xl:ml-20 leading-10">
             our <br />
             products
@@ -118,7 +123,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="m-6 xl:m-32 text-xl xl:text-3xl font-light">
+      <section
+        id="contactUs"
+        className="m-6 xl:m-32 text-xl xl:text-3xl font-light"
+      >
         <p>Want to become a part of Barraccuda family and sell our products?</p>
         <p>
           If you are online reseller, pool hall or a pool player we have great

@@ -347,7 +347,11 @@ function gloves() {
               <div className="flex items-center gap-4">
                 <span
                   className="cursor-pointer w-6 h-6 rounded-full border flex items-center justify-center"
-                  onClick={() => setQuantity(quantity > 0 ? quantity - 1 : 0)}
+                  onClick={() => {
+                    if (quantity === 1) return;
+
+                    setQuantity(quantity - 1);
+                  }}
                 >
                   -
                 </span>

@@ -106,7 +106,11 @@ function cart() {
                         </span>
                         <span>{item.quantity}</span>
                         <span
-                          onClick={() => setQuantity(item, -1)}
+                          onClick={() => {
+                            if (item.quantity === 1) return;
+
+                            setQuantity(item, -1);
+                          }}
                           className="cursor-pointer w-6 h-6 rounded-full border flex items-center justify-center"
                         >
                           -

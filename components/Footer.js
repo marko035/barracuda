@@ -37,7 +37,11 @@ function Footer({ darkBackground, goldFooter }) {
             ></div>
           </div>
           <div>
-            <div>Contact us</div>
+            <div>
+              <Link href="/#contactUs" scroll={false}>
+                Contact us
+              </Link>
+            </div>
             <div
               className={
                 "footerUnderline" + (goldFooter ? " goldUnderline" : "")

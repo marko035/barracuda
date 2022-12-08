@@ -175,7 +175,11 @@ function holders() {
               <div className="flex items-center gap-4">
                 <span
                   className="cursor-pointer w-6 h-6 rounded-full border flex items-center justify-center"
-                  onClick={() => setQuantity(quantity > 0 ? quantity - 1 : 0)}
+                  onClick={() => {
+                    if (quantity === 1) return;
+
+                    setQuantity(quantity - 1);
+                  }}
                 >
                   -
                 </span>
@@ -192,7 +196,7 @@ function holders() {
             <div className="p-[10px] flex justify-between">
               <span className="mr-10 flex-1">FINAL TOTAL</span>
 
-              <span>{quantity * price}$</span>
+              <span>${quantity * price}</span>
             </div>
 
             <button
