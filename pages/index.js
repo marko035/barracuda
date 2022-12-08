@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    document.body.style.height = window.innerHeight + "px";
-
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(cart);
   }, []);
@@ -24,12 +22,12 @@ export default function Home() {
 
       <Header cart={cart} />
 
-      <section className="w-screen h-screen relative bg-[#0c0c0c] flex justify-center items-center">
+      <section className="w-screen h-screen relative bg-[#0c0c0c] flex flex-col justify-center items-center">
         <img src="/main.svg" alt="Main" className="w-1/2" />
         <img
           src="/symphony.svg"
           alt="Symphony of colors"
-          className="w-1/3 absolute bottom-0 right-0 m-10"
+          className="w-1/3 absolute left-auto right-auto bottom-1/4"
         />
       </section>
 
