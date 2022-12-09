@@ -13,8 +13,8 @@ function Footer({ darkBackground, goldFooter }) {
             (darkBackground ? "bg-[#212121]" : "")
           }
         />
-        <div className="flex justify-center gap-6 xl:gap-32 absolute w-full bottom-64 text-white text-xl xl:text-2xl font-thin">
-          <div>
+        <div className="flex justify-center gap-6 xl:gap-32 absolute w-full bottom-48 text-white text-xl xl:text-2xl font-thin">
+          <div className="footerLinks">
             <div>
               <Link href="/#aboutUs" scroll={false}>
                 About us
@@ -26,17 +26,15 @@ function Footer({ darkBackground, goldFooter }) {
               }
             ></div>
           </div>
-          <div>
-            <div>
-              <Link href="/policy">Privacy Policy</Link>
-            </div>
+          <div className="footerLinks cursor-pointer">
+            <div>Privacy Policy</div>
             <div
               className={
                 "footerUnderline" + (goldFooter ? " goldUnderline" : "")
               }
             ></div>
           </div>
-          <div>
+          <div className="footerLinks">
             <div>
               <Link href="/#contactUs" scroll={false}>
                 Contact us

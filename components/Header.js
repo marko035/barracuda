@@ -85,15 +85,16 @@ function Header({ goldLogo, cart }) {
           (scrolled ? " bg-[#212121]" : "") +
           (sidebarActive ? " hidden" : "")
         }
-        onClick={() => setSidebarActive(!sidebarActive)}
       >
-        <img
-          src={goldLogo ? "/goldLogo.svg" : "/logo.svg"}
-          alt="Symphony of colors"
-          className="w-1/3"
-        />
+        <Link href="/" passHref>
+          <img
+            src={goldLogo ? "/goldLogo.svg" : "/logo.svg"}
+            alt="Logo"
+            className="w-1/3"
+          />
+        </Link>
 
-        <div>
+        <div onClick={() => setSidebarActive(!sidebarActive)}>
           <div
             className={
               "w-[30px] h-[2px] bg-[#00B901] mb-2" +

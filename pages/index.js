@@ -31,14 +31,13 @@ export default function Home() {
         />
       </section>
 
-      <section className="p-10 xl:px-20 pt-0">
+      <section className="p-10 pt-0 xl:px-20" id="aboutUs">
         <img
           src="/small-logo.svg"
           width={180}
           height={180}
           alt="Small Logo"
-          className="smallLogo mb-10"
-          id="aboutUs"
+          className="smallLogo mb-10 mt-[-10px]"
         />
         <h1 className="w-20 text-4xl xl:text-6xl font-medium ml-0 xl:ml-20 leading-10">
           about us
@@ -125,7 +124,7 @@ export default function Home() {
 
       <section
         id="contactUs"
-        className="xl:m-32 text-xl xl:text-3xl font-light p-10"
+        className="xl:m-32 text-xl xl:text-3xl font-light p-20"
       >
         <p>Want to become a part of Barraccuda family and sell our products?</p>
         <p>

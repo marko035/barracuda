@@ -51,7 +51,7 @@ function cart() {
     <>
       <Header cart={cart} />
 
-      <section className="shoppingCart bg-[#212121] flex flex-col xl:flex-row p-6 pt-20 xl:p-32 text-white">
+      <section className="shoppingCart bg-[#212121] flex flex-col xl:flex-row p-6 pt-20 xl:p-32 xl:pb-0 text-white">
         {cart.length ? (
           <div className="flex-1">
             <div
@@ -65,10 +65,10 @@ function cart() {
                 clear all
               </span>
             </div>
-            <div className="flex flex-col font-thin text-sm xl:text-2xl">
+            <div className="flex flex-col font-thin text-sm xl:text-2xl xl:h-[70vh] xl:overflow-y-scroll xl:whitespace-nowrap">
               {cart.map((item, index) => (
                 <div className="flex w-full" key={index}>
-                  <div className="flex-1 bg-[#232323] py-4 px-6 my-2">
+                  <div className="flex-1 bg-[#272727] py-4 px-6 my-2">
                     <div className="mb-4">
                       Barracuda Billiard
                       <span className="text-[#00B901]"> {item.type}</span>
@@ -129,7 +129,7 @@ function cart() {
             </div>
           </div>
         ) : (
-          <div className="text-3xl w-full text-center">
+          <div className="text-3xl w-full text-center my-20">
             Shopping Cart is empty
           </div>
         )}

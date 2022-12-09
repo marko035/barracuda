@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 function gloves() {
@@ -9,6 +9,7 @@ function gloves() {
     setCart(cart);
   }, []);
 
+  const imageContainer = useRef(null);
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
@@ -89,11 +90,39 @@ function gloves() {
     }, 3000);
   };
 
+  const nextImage = () => {
+    const childArray = Array.from(imageContainer.current.childNodes);
+
+    const nextImageNumber =
+      imageNumber === childArray.length ? 1 : imageNumber + 1;
+
+    setImageNumber(nextImageNumber);
+
+    childArray[nextImageNumber - 1].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  };
+
+  const previousImage = () => {
+    const childArray = Array.from(imageContainer.current.childNodes);
+
+    const previousImageNumber =
+      imageNumber === 1 ? childArray.length : imageNumber - 1;
+
+    setImageNumber(previousImageNumber);
+
+    childArray[previousImageNumber - 1].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  };
+
   return (
     <>
       <Header cart={cart} />
 
-      <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
+      <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-36">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
           <p className="pb-8 mt-20 xl:mt-0">
             <span className="text-[#00B901]">
@@ -224,40 +253,59 @@ function gloves() {
             alt="Glove Preview"
           />
 
-          <div className="flex items-center xl:ml-[-80px] before:none after:none">
-            <div className="hidden xl:block w-20 h-20 mt-8 leftArrow"></div>
+          <div className="flex items-center xl:ml-[-40px] before:none after:none">
+            <div
+              className="hidden xl:block w-[40px] h-[40px] mt-8 leftArrow cursor-pointer"
+              onClick={() => previousImage()}
+            ></div>
 
             <div
               key={variant}
+              ref={imageContainer}
               className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-full xl:w-[642px] imageCarousel cursor-pointer"
             >
               <img
-                className="w-[100px] xl:w-[214px] h-auto"
+                className={
+                  "w-[100px] xl:w-[214px] h-auto border-black" +
+                  (imageNumber === 1 ? " border" : "")
+                }
                 src={`/gloves/${variant.slice(1)}-1.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(1)}
               />
               <img
-                className="w-[100px] xl:w-[214px] h-auto"
+                className={
+                  "w-[100px] xl:w-[214px] h-auto border-black" +
+                  (imageNumber === 2 ? " border" : "")
+                }
                 src={`/gloves/${variant.slice(1)}-2.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(2)}
               />
               <img
-                className="w-[100px] xl:w-[214px] h-auto"
+                className={
+                  "w-[100px] xl:w-[214px] h-auto border-black" +
+                  (imageNumber === 3 ? " border" : "")
+                }
                 src={`/gloves/${variant.slice(1)}-3.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(3)}
               />
               <img
-                className="w-[100px] xl:w-[214px] h-auto"
+                className={
+                  "w-[100px] xl:w-[214px] h-auto border-black" +
+                  (imageNumber === 4 ? " border" : "")
+                }
                 src={`/gloves/${variant.slice(1)}-4.webp`}
                 alt="Glove Preview"
                 onClick={() => setImageNumber(4)}
               />
             </div>
 
-            <div className="hidden xl:block w-20 h-20 mt-8 rightArrow"></div>
+            <div
+              className="hidden xl:block w-[40px] h-[40px] mt-8 rightArrow cursor-pointer"
+              onClick={() => nextImage()}
+            ></div>
           </div>
           <div className="flex justify-between text-md xl:text-2xl mt-2 xl:w-[642px]">
             <span>$25.00</span>
@@ -368,7 +416,7 @@ function gloves() {
             <div className="p-[10px] flex justify-between">
               <span className="mr-10 flex-1">FINAL TOTAL</span>
 
-              <span>{quantity * price}$</span>
+              <span>${quantity * price}</span>
             </div>
 
             <button

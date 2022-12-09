@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 function holders() {
@@ -9,6 +9,7 @@ function holders() {
     setCart(cart);
   }, []);
 
+  const imageContainer = useRef(null);
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
@@ -45,6 +46,34 @@ function holders() {
     setTimeout(function () {
       snackBar.classList.toggle("show");
     }, 3000);
+  };
+
+  const nextImage = () => {
+    const childArray = Array.from(imageContainer.current.childNodes);
+
+    const nextImageNumber =
+      imageNumber === childArray.length ? 1 : imageNumber + 1;
+
+    setImageNumber(nextImageNumber);
+
+    childArray[nextImageNumber - 1].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  };
+
+  const previousImage = () => {
+    const childArray = Array.from(imageContainer.current.childNodes);
+
+    const previousImageNumber =
+      imageNumber === 1 ? childArray.length : imageNumber - 1;
+
+    setImageNumber(previousImageNumber);
+
+    childArray[previousImageNumber - 1].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
   };
 
   return (
@@ -141,14 +170,23 @@ function holders() {
             alt="Glove Preview"
           />
 
-          <div className="flex items-center xl:ml-[-80px] before:none after:none">
-            <div className="hidden xl:block w-20 h-20 mt-8 leftArrow"></div>
+          <div className="flex items-center xl:ml-[-40px] before:none after:none">
+            <div
+              className="hidden xl:block w-[40px] h-[40px] mt-8 leftArrow cursor-pointer"
+              onClick={() => previousImage()}
+            ></div>
 
-            <div className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-full xl:w-[600px] imageCarousel cursor-pointer">
+            <div
+              className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-full xl:w-[600px] imageCarousel cursor-pointer"
+              ref={imageContainer}
+            >
               {new Array(totalImages[variant]).fill().map((el, index) => (
                 <img
                   key={index}
-                  className="w-[100px] xl:w-[200px] h-auto"
+                  className={
+                    "w-[100px] xl:w-[200px] h-auto border-black" +
+                    (imageNumber === index + 1 ? " border" : "")
+                  }
                   src={`/holders/${variant}-${index + 1}.webp`}
                   alt="Glove Preview"
                   onClick={() => setImageNumber(index + 1)}
@@ -156,7 +194,10 @@ function holders() {
               ))}
             </div>
 
-            <div className="hidden xl:block w-20 h-20 mt-8 rightArrow"></div>
+            <div
+              className="hidden xl:block w-[40px] h-[40px] mt-8 rightArrow cursor-pointer"
+              onClick={() => nextImage()}
+            ></div>
           </div>
           <div className="flex justify-between text-md xl:text-2xl mt-2 xl:w-[600px]">
             <span>${price}.00</span>
@@ -165,7 +206,7 @@ function holders() {
         </div>
 
         <div className="flex-1 text-xs xl:text-xl">
-          <div className="mt-20 xl:w-[500px] mx-auto">
+          <div className="mt-32 xl:w-[500px] mx-auto">
             <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
               {variant.toUpperCase()} CUE HOLDER
             </div>
