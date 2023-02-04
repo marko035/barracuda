@@ -2,14 +2,24 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useState } from "react";
 import { useEffect } from "react";
+import { AllVariations } from "../js/AllVariations";
 
 function cart() {
   useEffect(() => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(cart);
+
+    if (location.search.indexOf("success") !== -1) {
+      removeAll();
+
+      setSuccess(true);
+
+      history.pushState(null, null, "/cart");
+    }
   }, []);
 
   const [cart, setCart] = useState([]);
+  const [success, setSuccess] = useState(false);
 
   const setQuantity = (item, change) => {
     const newCart = cart.map((currentItem) => {
@@ -34,7 +44,7 @@ function cart() {
     localStorage.setItem("cart", JSON.stringify(newCart));
   };
 
-  const removeAll = () => {
+  const removeAll = async () => {
     setCart([]);
     localStorage.removeItem("cart");
   };
@@ -45,7 +55,31 @@ function cart() {
     }, 0);
   };
 
-  const buy = () => {};
+  const buy = async () => {
+    const parsedCart = cart.map(({ id, quantity }) => {
+      return {
+        id: AllVariations[id],
+        quantity,
+      };
+    });
+
+    const filteredCard = parsedCart.filter(({ id }) => id);
+    console.log(filteredCard);
+
+    const queryParams = filteredCard
+      .map((order) => {
+        return `&quantity[${order.id.slice(1)}]=${order.quantity}`;
+      })
+      .join("");
+
+    // await fetch(
+    //   `https://shop.barracudabilliards.com/checkout/?add-to-cart=984${queryParams}`
+    // );
+
+    location.replace(
+      `https://shop.barracudabilliards.com/checkout/?add-to-cart=984${queryParams}`
+    );
+  };
 
   return (
     <>
@@ -130,7 +164,9 @@ function cart() {
           </div>
         ) : (
           <div className="text-3xl w-full text-center my-20">
-            Shopping Cart is empty
+            {success
+              ? "Thank you for your purchase!"
+              : "Shopping Cart is empty"}
           </div>
         )}
 

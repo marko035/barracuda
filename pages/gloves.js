@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { AllVariations } from "../js/AllVariations";
 
 function gloves() {
   useEffect(() => {
@@ -21,48 +22,76 @@ function gloves() {
     {
       name: "Black",
       color: "#000000",
+      availableSizes: ["m", "l"],
     },
     {
       name: "Red",
       color: "#E20623",
+      availableSizes: ["s", "m", "l"],
     },
     {
       name: "Sky blue",
       color: "#03CCFF",
+      availableSizes: ["m", "l"],
     },
     {
       name: "Dark blue",
       color: "#2869C8",
+      availableSizes: ["m", "l"],
     },
     {
       name: "Navy blue",
       color: "#152C40",
+      availableSizes: ["m"],
     },
     {
       name: "Orange",
       color: "#FDAD79",
+      availableSizes: ["s", "m", "l"],
     },
     {
       name: "Purple",
       color: "#622773",
+      availableSizes: ["s", "m", "l"],
     },
     {
       name: "Green",
       color: "#41B541",
+      availableSizes: ["m"],
     },
     {
       name: "Yellow",
       color: "#F4EE27",
+      availableSizes: ["m"],
     },
     {
       name: "Grey",
       color: "#AAAAAA",
+      availableSizes: ["m", "l"],
     },
   ];
 
+  const showSnackBar = (message) => {
+    var snackBar = document.getElementById("snackbar");
+    snackBar.textContent = message;
+    snackBar.classList.toggle("show");
+    setTimeout(function () {
+      snackBar.classList.toggle("show");
+    }, 3000);
+  };
+
   const addToCart = () => {
+    const id = `glove-${variant}-${hand}-${size}`;
+
+    if (!AllVariations[id]) {
+      showSnackBar(
+        "This variation of the product is not available at the moment."
+      );
+      return;
+    }
+
     const item = {
-      id: `glove-${variant}-${hand}-${size}`,
+      id,
       type: "glove",
       variant,
       hand,
@@ -83,11 +112,7 @@ function gloves() {
     localStorage.setItem("cart", JSON.stringify(cart));
     setCart(cart);
 
-    var snackBar = document.getElementById("snackbar");
-    snackBar.classList.toggle("show");
-    setTimeout(function () {
-      snackBar.classList.toggle("show");
-    }, 3000);
+    showSnackBar("Product has been added to the cart.");
   };
 
   const nextImage = () => {
@@ -465,7 +490,7 @@ function gloves() {
         </div>
       </section>
 
-      <div id="snackbar">Product has been added to the cart</div>
+      <div id="snackbar">Product has been added to the cart.</div>
 
       <Footer darkBackground={false} goldFooter={false} />
     </>

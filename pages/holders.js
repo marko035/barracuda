@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { AllVariations } from "../js/AllVariations";
 
 function holders() {
   useEffect(() => {
@@ -20,9 +21,27 @@ function holders() {
   };
   const price = 69;
 
+  const showSnackBar = (message) => {
+    var snackBar = document.getElementById("snackbar");
+    snackBar.textContent = message;
+    snackBar.classList.toggle("show");
+    setTimeout(function () {
+      snackBar.classList.toggle("show");
+    }, 3000);
+  };
+
   const addToCart = () => {
+    const id = `holder-${variant}`;
+
+    if (!AllVariations[id]) {
+      showSnackBar(
+        "This variation of the product is not available at the moment."
+      );
+      return;
+    }
+
     const item = {
-      id: `holder-${variant}`,
+      id,
       type: "holder",
       variant,
       quantity,
@@ -41,11 +60,7 @@ function holders() {
     localStorage.setItem("cart", JSON.stringify(cart));
     setCart(cart);
 
-    var snackBar = document.getElementById("snackbar");
-    snackBar.classList.toggle("show");
-    setTimeout(function () {
-      snackBar.classList.toggle("show");
-    }, 3000);
+    showSnackBar("Product has been added to the cart.");
   };
 
   const nextImage = () => {
@@ -286,7 +301,7 @@ function holders() {
         </div>
       </section>
 
-      <div id="snackbar">Product has been added to the cart</div>
+      <div id="snackbar"></div>
 
       <Footer darkBackground={false} goldFooter={true} />
     </>
