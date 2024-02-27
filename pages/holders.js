@@ -216,7 +216,7 @@ function holders() {
           </div>
           <div className="flex justify-between text-md xl:text-2xl mt-2 xl:w-[600px]">
             <span>${price}.00</span>
-            <span>FREE SHIPPING</span>
+            <span>FREE SHIPPING in Continental USA</span>
           </div>
         </div>
 

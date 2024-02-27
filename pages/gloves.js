@@ -334,7 +334,7 @@ function gloves() {
           </div>
           <div className="flex justify-between text-md xl:text-2xl mt-2 xl:w-[642px]">
             <span>$25.00</span>
-            <span>FREE SHIPPING</span>
+            <span>FREE SHIPPING in Continental USA</span>
           </div>
         </div>
 

@@ -26,7 +26,7 @@ function Header({ goldLogo, cart }) {
     <>
       <header
         className={
-          "flex justify-between fixed px-8 items-center w-full text-white z-10 hidden md:flex" +
+          "justify-between fixed px-8 items-center w-full text-white z-10 hidden md:flex" +
           (scrolled ? " text-white" : "") +
           (scrolled ? " bg-[#212121]" : "")
         }
@@ -34,7 +34,7 @@ function Header({ goldLogo, cart }) {
         <div>
           <Link href="/" passHref>
             <img
-              src={goldLogo ? "/goldLogo.svg" : "/logo.svg"}
+              src={goldLogo ? "/goldLogo.svg" : "/logo-white.svg"}
               width={150}
               height={40}
               alt="logo"
@@ -67,14 +67,14 @@ function Header({ goldLogo, cart }) {
               className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
             ></div>
           </div>
-          <div
-            className={
-              "flex flex-col p-4 items-start justify-center navbarLink mb-2 text-[#00B901]" +
-              (goldLogo ? " text-[#D9AF62]" : "")
-            }
-          >
-            ${total}.00
-          </div>
+        </div>
+        <div
+          className={
+            "flex flex-col p-4 items-start justify-center navbarLink mb-2 text-[#00B901]" +
+            (goldLogo ? " text-[#D9AF62]" : "")
+          }
+        >
+          ${total}.00
         </div>
       </header>
 
@@ -88,7 +88,7 @@ function Header({ goldLogo, cart }) {
       >
         <Link href="/" passHref>
           <img
-            src={goldLogo ? "/goldLogo.svg" : "/logo.svg"}
+            src={goldLogo ? "/goldLogo.svg" : "/logo-white.svg"}
             alt="Logo"
             className="w-1/3"
           />
@@ -97,19 +97,19 @@ function Header({ goldLogo, cart }) {
         <div onClick={() => setSidebarActive(!sidebarActive)}>
           <div
             className={
-              "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+              "w-[30px] h-[2px] bg-white mb-2" +
               (goldLogo ? " bg-[#D9AF62]" : "")
             }
           ></div>
           <div
             className={
-              "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+              "w-[30px] h-[2px] bg-white mb-2" +
               (goldLogo ? " bg-[#D9AF62]" : "")
             }
           ></div>
           <div
             className={
-              "w-[30px] h-[2px] bg-[#00B901] mb-2" +
+              "w-[30px] h-[2px] bg-white mb-2" +
               (goldLogo ? " bg-[#D9AF62]" : "")
             }
           ></div>

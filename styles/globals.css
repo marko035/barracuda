@@ -144,6 +144,16 @@ a {
   min-height: calc(100vh - 400px);
 }
 
+/* .productContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 50px solid #101010;
+  border-left: 50px solid #212121;
+  width: 0;
+} */
+
 input[type="radio"] {
   accent-color: black;
 }
