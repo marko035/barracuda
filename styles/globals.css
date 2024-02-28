@@ -140,6 +140,17 @@ a {
   transform: rotate(315deg);
 }
 
+.holderArrow.leftArrow,
+.holderArrow.rightArrow {
+  background: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    transparent 50%,
+    #d9af62 50%,
+    #d9af62 100%
+  );
+}
+
 .shoppingCart {
   min-height: calc(100vh - 400px);
 }

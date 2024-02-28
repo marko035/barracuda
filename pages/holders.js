@@ -95,90 +95,55 @@ function holders() {
     <>
       <Header goldLogo={true} cart={cart} />
 
-      <section className="glovesTopSection flex flex-col xl:flex-row min-h-screen px-6 py-20 xl:px-32 xl:pt-48">
+      <section className="glovesTopSection flex flex-col min-h-screen px-6 py-20 xl:px-32 xl:pt-48 items-center text-center text-white pb-0">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
           <p className="mt-20 xl:mt-0">
-            <span className="text-[#D9AF62]">
-              PCH is Premium Cue Holder by Barracuda.
-            </span>{" "}
+            PCH is Premium Cue Holder by Barracuda.
             <br />
             <br /> We understand how much every pool player care for his
             equipment <br /> and wanted to create something different than
             current market. <br />
-            <br /> PCH Cue Holders are made from{" "}
-            <span className="font-bold">A grade Mahogany wood</span>, <br />
-            <span className="font-bold">Stainless steel</span> plate and{" "}
-            <span className="font-bold">real leather</span> packed in luxury box
-            so it can be <br /> perfect gift for any pool buddy. <br />
-            <br /> Package contains also{" "}
-            <span className="font-bold">alcantara bag</span> with leather <br />
-            Barracuda logo for better protection of PCH. .
+            <br />
+            PCH Cue Holders are made from A grade Mahogany wood, Stainless steel
+            plate <br /> and real leather packed in luxury box so it can be
+            perfect gift for any pool buddy. <br />
+            <br />
+            Package contains also alcantara bag with leather Barracuda logo for
+            better protection of PCH. .
           </p>
         </div>
 
-        <div className="h-full text-xl xl:text-2xl text-center text-gray-400 flex-1 flex flex-col justify-center items-center gap-10 text-[#D9AF62]">
+        <div className="h-full text-xl xl:text-2xl text-center pt-48 flex-1 flex flex-col justify-center items-center gap-10 text-[#D9AF62]">
           <p className="text-white mt-20 xl:mt-[-30px]">
             Available in 2 materials
           </p>
 
-          <div className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6">
-            <img src="/walnut.svg" alt="Walnut" className="w-32 h-28" />
-            <span>Walnut</span>
-          </div>
-
-          <div className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6">
-            <img src="/mahogany.svg" alt="Mahogany" className="w-32 h-28" />
-            <span>Mahogany</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="flex py-10 p-6 xl:px-32 min-h-screen flex-col xl:flex-row">
-        <div className="flex-1">
-          <h1 className="text-[#212121] text-3xl font-light">
-            Barracuda Billiard cue holder
-          </h1>
-
-          <div className="flex gap-x-2 text-gray-400 text-xs">
+          <div className="flex gap-10 cursor-pointer mb-10">
             <div
-              style={{
-                borderBottomColor:
-                  variant === "walnut" ? "#D9AF62" : "transparent",
-              }}
-              className="py-1 cursor-pointer border-b-4 w-14"
+              className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6"
               onClick={() => {
                 setImageNumber(1);
                 setVariant("walnut");
               }}
             >
+              <img src="/walnut.svg" alt="Walnut" className="w-24 h-20" />
               <span>Walnut</span>
-              <div className="flex justify-center items-center h-12 bg-[#D9AF62]">
-                {variant === "walnut" ? (
-                  <span className="text-white text-3xl">&#10003;</span>
-                ) : null}
-              </div>
             </div>
 
             <div
-              style={{
-                borderBottomColor:
-                  variant === "mahogany" ? "#82693a" : "transparent",
-              }}
-              className="py-1 cursor-pointer border-b-4 w-14"
+              className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6"
               onClick={() => {
                 setImageNumber(1);
                 setVariant("mahogany");
               }}
             >
+              <img src="/mahogany.svg" alt="Mahogany" className="w-24 h-20" />
               <span>Mahogany</span>
-              <div className="flex justify-center items-center h-12 bg-[#82693a]">
-                {variant === "mahogany" ? (
-                  <span className="text-white text-3xl">&#10003;</span>
-                ) : null}
-              </div>
             </div>
           </div>
+        </div>
 
+        <div className="flex-1">
           <img
             src={`/holders/${variant}-${imageNumber}.webp`}
             className="mt-4 w-[100%] xl:w-[600px] h-[auto] xl:h-[400px]"
@@ -187,7 +152,7 @@ function holders() {
 
           <div className="flex items-center xl:ml-[-40px] before:none after:none">
             <div
-              className="hidden xl:block w-[40px] h-[40px] mt-8 leftArrow cursor-pointer"
+              className="hidden xl:block w-[40px] h-[40px] mt-8 holderArrow leftArrow cursor-pointer"
               onClick={() => previousImage()}
             ></div>
 
@@ -210,7 +175,7 @@ function holders() {
             </div>
 
             <div
-              className="hidden xl:block w-[40px] h-[40px] mt-8 rightArrow cursor-pointer"
+              className="hidden xl:block w-[40px] h-[40px] mt-8 holderArrow rightArrow cursor-pointer"
               onClick={() => nextImage()}
             ></div>
           </div>
@@ -220,7 +185,7 @@ function holders() {
           </div>
         </div>
 
-        <div className="flex-1 text-xs xl:text-xl">
+        <div className="flex-1 text-xs xl:text-xl mb-48 text-left">
           <div className="mt-32 xl:w-[500px] mx-auto">
             <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
               {variant.toUpperCase()} CUE HOLDER
@@ -299,11 +264,11 @@ function holders() {
             </div>
           </div>
         </div>
+
+        <Footer darkBackground={false} goldFooter={true} />
       </section>
 
       <div id="snackbar"></div>
-
-      <Footer darkBackground={false} goldFooter={true} />
     </>
   );
 }

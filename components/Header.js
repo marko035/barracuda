@@ -70,7 +70,7 @@ function Header({ goldLogo, cart }) {
         </div>
         <div
           className={
-            "flex flex-col p-4 items-start justify-center navbarLink mb-2 text-[#00B901]" +
+            "flex flex-col w-[150px] p-4 items-start justify-center navbarLink mb-2 text-[#00B901]" +
             (goldLogo ? " text-[#D9AF62]" : "")
           }
         >

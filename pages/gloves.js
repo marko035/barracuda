@@ -260,7 +260,7 @@ function gloves() {
             </div>
           </div>
 
-          <div className="flex-1 text-xs xl:text-xl">
+          <div className="flex-1 text-xs xl:text-xl text-left">
             <div className="mt-20 xl:w-[500px] mx-auto">
               <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
                 <span className="mr-10 flex-1">CHOOSE HAND</span>
