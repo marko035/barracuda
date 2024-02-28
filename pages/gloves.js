@@ -174,7 +174,7 @@ function gloves() {
             extra-durable pad at wear point.
           </p>
 
-          <h2 class="mt-48 mb-24">
+          <h2 className="mt-48 mb-24">
             AVAILABLE IN 3 SIZES AND 10 COLORS YOU CAN CHOOSE FROM
           </h2>
 
