@@ -62,6 +62,18 @@ function Header({ goldLogo, cart }) {
             ></div>
           </div>
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
+            <Link href="/fitrack">FIT RACKS</Link>
+            <div
+              className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
+            ></div>
+          </div>
+          <div className="flex flex-col p-4 items-start justify-center navbarLink">
+            <Link href="/scoreboard">SCORE BOARD</Link>
+            <div
+              className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
+            ></div>
+          </div>
+          <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link href="/cart">CART</Link>
             <div
               className={"headerUnderline" + (goldLogo ? " goldUnderline" : "")}
@@ -70,7 +82,7 @@ function Header({ goldLogo, cart }) {
         </div>
         <div
           className={
-            "flex flex-col w-[150px] p-4 items-start justify-center navbarLink mb-2 text-[#00B901]" +
+            "flex flex-col w-[150px] p-4 items-start justify-center items-end navbarLink mb-2 text-[#00B901]" +
             (goldLogo ? " text-[#D9AF62]" : "")
           }
         >
@@ -126,6 +138,12 @@ function Header({ goldLogo, cart }) {
           </h1>
           <h1>
             <Link href="/holders">HOLDERS</Link>
+          </h1>
+          <h1>
+            <Link href="/fitrack">FIT RACK</Link>
+          </h1>
+          <h1>
+            <Link href="/scoreboard">SCORE BOARD</Link>
           </h1>
           <h1>
             <Link href="/cart">CART</Link>
