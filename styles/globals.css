@@ -123,8 +123,8 @@ a {
     to bottom right,
     transparent 0%,
     transparent 50%,
-    #212121 50%,
-    #212121 100%
+    rgb(22, 163, 74) 50%,
+    rgb(22, 163, 74) 100%
   );
   transform: rotate(135deg);
 }
@@ -134,8 +134,8 @@ a {
     to bottom right,
     transparent 0%,
     transparent 50%,
-    #212121 50%,
-    #212121 100%
+    rgb(22, 163, 74) 50%,
+    rgb(22, 163, 74) 100%
   );
   transform: rotate(315deg);
 }
