@@ -15,7 +15,7 @@ function fitrack() {
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
   const [variant, setVariant] = useState("walnut");
-  const totalImages = 4;
+  const totalImages = 5;
   const price = 69;
 
   const showSnackBar = (message) => {

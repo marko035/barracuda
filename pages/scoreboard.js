@@ -15,10 +15,7 @@ function scoreboard() {
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
   const [variant, setVariant] = useState("walnut");
-  const totalImages = {
-    walnut: 9,
-    mahogany: 5,
-  };
+  const totalImages = 7;
   const price = 69;
 
   const showSnackBar = (message) => {
@@ -98,54 +95,39 @@ function scoreboard() {
       <section className="glovesTopSection flex flex-col min-h-screen px-6 py-20 xl:px-32 xl:pt-48 items-center text-center text-white pb-0">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
           <p className="mt-20 xl:mt-0">
-            PCH is Premium Cue Holder by Barracuda.
+            Introducing the Barracuda Pool Score Board, a modern redesign of the
+            traditional pool score board.
             <br />
-            <br /> We understand how much every pool player care for his
-            equipment <br /> and wanted to create something different than
-            current market. <br />
+            Crafted from high-quality materials, this sleek and durable score
+            board brings a contemporary touch to your pool area.
             <br />
-            PCH Cue Holders are made from A grade Mahogany wood, Stainless steel
-            plate <br /> and real leather packed in luxury box so it can be
-            perfect gift for any pool buddy. <br />
             <br />
-            Package contains also alcantara bag with leather Barracuda logo for
-            better protection of PCH. .
-          </p>
-        </div>
-
-        <div className="h-full text-xl xl:text-2xl text-center pt-48 flex-1 flex flex-col justify-center items-center gap-10 text-[#D9AF62]">
-          <p className="text-white mt-20 xl:mt-[-30px]">
-            Available in 2 materials
+            Elevate your pool game with style and functionality.
           </p>
 
-          <div className="flex gap-10 cursor-pointer mb-10">
-            <div
-              className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6"
-              onClick={() => {
-                setImageNumber(1);
-                setVariant("walnut");
-              }}
-            >
-              <img src="/walnut.svg" alt="Walnut" className="w-24 h-20" />
-              <span>Walnut</span>
-            </div>
-
-            <div
-              className="flex flex-col border-2 border-[#D9AF62] rounded-xl p-6"
-              onClick={() => {
-                setImageNumber(1);
-                setVariant("mahogany");
-              }}
-            >
-              <img src="/mahogany.svg" alt="Mahogany" className="w-24 h-20" />
-              <span>Mahogany</span>
+          <div className="text-white mt-20 w-72 mx-auto text-left text-2xl mb-24">
+            Package contains:
+            <br />
+            <br />
+            <div className="text-left">
+              - Barracuda Score Board x1
+              <br />
+              - Wall Template x1
+              <br />
+              - Screws x2
+              <br />
+              - Drywall anchors x2
+              <br />
+              - Concrete/brick anchors x2
+              <br />- Barracuda stickers x2
             </div>
           </div>
+          <br />
         </div>
 
         <div className="flex-1">
           <img
-            src={`/holders/${variant}-${imageNumber}.webp`}
+            src={`/scoreboard/scoreboard-${imageNumber}.jpg`}
             className="mt-4 w-[100%] xl:w-[600px] h-[auto] xl:h-[400px]"
             alt="Glove Preview"
           />
@@ -160,14 +142,14 @@ function scoreboard() {
               className="flex gap-4 mt-8 flex-nowrap overflow-y-scroll w-full xl:w-[600px] imageCarousel cursor-pointer"
               ref={imageContainer}
             >
-              {new Array(totalImages[variant]).fill().map((el, index) => (
+              {new Array(totalImages).fill().map((el, index) => (
                 <img
                   key={index}
                   className={
                     "w-[100px] xl:w-[200px] h-auto border-black" +
                     (imageNumber === index + 1 ? " border" : "")
                   }
-                  src={`/holders/${variant}-${index + 1}.webp`}
+                  src={`/scoreboard/scoreboard-${index + 1}.jpg`}
                   alt="Glove Preview"
                   onClick={() => setImageNumber(index + 1)}
                 />
@@ -187,9 +169,6 @@ function scoreboard() {
 
         <div className="flex-1 text-xs xl:text-xl mb-48 text-left">
           <div className="mt-32 xl:w-[500px] mx-auto">
-            <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
-              {variant.toUpperCase()} CUE HOLDER
-            </div>
             <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
               <span className="mr-10 flex-1">QUANTITY</span>
 
