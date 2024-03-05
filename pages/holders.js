@@ -93,7 +93,7 @@ function holders() {
 
   return (
     <>
-      <Header goldLogo={true} cart={cart} />
+      <Header cart={cart} logoColor="#D9AF62" logoImage="goldLogo.svg" />
 
       <section className="glovesTopSection flex flex-col min-h-screen px-6 py-20 xl:px-32 xl:pt-48 items-center text-center text-white pb-0">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
@@ -188,9 +188,6 @@ function holders() {
         <div className="flex-1 text-xs xl:text-xl mb-48 text-left">
           <div className="mt-32 xl:w-[500px] mx-auto">
             <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
-              {variant.toUpperCase()} CUE HOLDER
-            </div>
-            <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
               <span className="mr-10 flex-1">QUANTITY</span>
 
               <div className="flex items-center gap-4">
@@ -265,7 +262,11 @@ function holders() {
           </div>
         </div>
 
-        <Footer darkBackground={false} goldFooter={true} />
+        <Footer
+          darkBackground={false}
+          footerColor="#D9AF62"
+          footerImage="goldFooter.svg"
+        />
       </section>
 
       <div id="snackbar"></div>

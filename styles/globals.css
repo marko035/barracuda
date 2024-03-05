@@ -75,13 +75,11 @@ a {
 .footerUnderline {
   width: 45px;
   height: 1px;
-  background: rgb(22, 163, 74);
 }
 
 .headerUnderline {
   width: 25px;
   height: 1px;
-  background: rgb(22, 163, 74);
   width: 0;
   margin-top: 5px;
 }
@@ -119,25 +117,22 @@ a {
 }
 
 .leftArrow {
-  background: linear-gradient(
-    to bottom right,
-    transparent 0%,
-    transparent 50%,
-    rgb(22, 163, 74) 50%,
-    rgb(22, 163, 74) 100%
-  );
   transform: rotate(135deg);
 }
 
 .rightArrow {
+  transform: rotate(315deg);
+}
+
+.gloveArrow.leftArrow,
+.gloveArrow.rightArrow {
   background: linear-gradient(
     to bottom right,
     transparent 0%,
     transparent 50%,
-    rgb(22, 163, 74) 50%,
-    rgb(22, 163, 74) 100%
+    #03ccff 50%,
+    #03ccff 100%
   );
-  transform: rotate(315deg);
 }
 
 .holderArrow.leftArrow,
@@ -148,6 +143,28 @@ a {
     transparent 50%,
     #d9af62 50%,
     #d9af62 100%
+  );
+}
+
+.fitrackArrow.leftArrow,
+.fitrackArrow.rightArrow {
+  background: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    transparent 50%,
+    #00b901 50%,
+    #00b901 100%
+  );
+}
+
+.scoreboardArrow.leftArrow,
+.scoreboardArrow.rightArrow {
+  background: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    transparent 50%,
+    #712296 50%,
+    #712296 100%
   );
 }
 

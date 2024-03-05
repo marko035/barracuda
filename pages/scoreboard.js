@@ -14,9 +14,8 @@ function scoreboard() {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
-  const [variant, setVariant] = useState("walnut");
   const totalImages = 7;
-  const price = 69;
+  const price = 159;
 
   const showSnackBar = (message) => {
     var snackBar = document.getElementById("snackbar");
@@ -28,7 +27,7 @@ function scoreboard() {
   };
 
   const addToCart = () => {
-    const id = `holder-${variant}`;
+    const id = `scoreboard`;
 
     if (!AllVariations[id]) {
       showSnackBar(
@@ -39,8 +38,7 @@ function scoreboard() {
 
     const item = {
       id,
-      type: "holder",
-      variant,
+      type: "scoreboard",
       quantity,
       price,
     };
@@ -90,7 +88,7 @@ function scoreboard() {
 
   return (
     <>
-      <Header goldLogo={false} cart={cart} />
+      <Header cart={cart} logoColor="#712296" logoImage="logo-purple.svg" />
 
       <section className="glovesTopSection flex flex-col min-h-screen px-6 py-20 xl:px-32 xl:pt-48 items-center text-center text-white pb-0">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
@@ -134,7 +132,7 @@ function scoreboard() {
 
           <div className="flex items-center xl:ml-[-40px] before:none after:none">
             <div
-              className="hidden xl:block w-[40px] h-[40px] mt-8 holderArrow leftArrow cursor-pointer"
+              className="hidden xl:block w-[40px] h-[40px] mt-8 scoreboardArrow leftArrow cursor-pointer"
               onClick={() => previousImage()}
             ></div>
 
@@ -157,7 +155,7 @@ function scoreboard() {
             </div>
 
             <div
-              className="hidden xl:block w-[40px] h-[40px] mt-8 holderArrow rightArrow cursor-pointer"
+              className="hidden xl:block w-[40px] h-[40px] mt-8 scoreboardArrow rightArrow cursor-pointer"
               onClick={() => nextImage()}
             ></div>
           </div>
@@ -169,7 +167,7 @@ function scoreboard() {
 
         <div className="flex-1 text-xs xl:text-xl mb-48 text-left">
           <div className="mt-32 xl:w-[500px] mx-auto">
-            <div className="border-b-2 border-b-[#D9AF62] p-[10px] flex justify-between">
+            <div className="border-b-2 border-b-[#712296] p-[10px] flex justify-between">
               <span className="mr-10 flex-1">QUANTITY</span>
 
               <div className="flex items-center gap-4">
@@ -201,12 +199,12 @@ function scoreboard() {
 
             <button
               onClick={() => addToCart()}
-              className="w-full border-2 border-transparent bg-[#D9AF62] rounded-md p-2 text-white mt-10"
+              className="w-full border-2 border-transparent bg-[#712296] rounded-md p-2 text-white mt-10"
             >
               add to cart
             </button>
             <Link href="/cart" passHref>
-              <button className="w-full text-[#D9AF62] bg-white border-2 border-[#D9AF62] rounded-md mt-6 p-2">
+              <button className="w-full text-[#712296] bg-white border-2 border-[#712296] rounded-md mt-6 p-2">
                 go to cart
               </button>
             </Link>
@@ -244,7 +242,11 @@ function scoreboard() {
           </div>
         </div>
 
-        <Footer darkBackground={false} goldFooter={true} />
+        <Footer
+          darkBackground={false}
+          footerColor="#712296"
+          footerImage="purpleFooter.svg"
+        />
       </section>
 
       <div id="snackbar"></div>

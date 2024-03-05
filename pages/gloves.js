@@ -145,7 +145,7 @@ function gloves() {
 
   return (
     <>
-      <Header cart={cart} />
+      <Header cart={cart} logoColor="#03ccff" logoImage="logo-light-blue.svg" />
 
       <section className="glovesTopSection flex flex-col min-h-screen px-6 py-20 pb-0 xl:px-32 xl:pt-36 items-center text-center">
         <div className="text-white text-xl xl:text-2xl xl:pr-10 font-extralight xl:w-[80%] mb-48">
@@ -202,7 +202,7 @@ function gloves() {
 
             <div className="flex items-center before:none after:none">
               <div
-                className="hidden xl:block w-[40px] h-[40px] mt-8 leftArrow cursor-pointer"
+                className="hidden xl:block w-[40px] h-[40px] mt-8 gloveArrow leftArrow cursor-pointer"
                 onClick={() => previousImage()}
               ></div>
 
@@ -250,7 +250,7 @@ function gloves() {
               </div>
 
               <div
-                className="hidden xl:block w-[40px] h-[40px] mt-8 rightArrow cursor-pointer"
+                className="hidden xl:block w-[40px] h-[40px] mt-8 gloveArrow rightArrow cursor-pointer"
                 onClick={() => nextImage()}
               ></div>
             </div>
@@ -262,7 +262,7 @@ function gloves() {
 
           <div className="flex-1 text-xs xl:text-xl text-left">
             <div className="mt-20 xl:w-[500px] mx-auto">
-              <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
+              <div className="border-b-2 border-b-[#03ccff] p-[10px] flex justify-between">
                 <span className="mr-10 flex-1">CHOOSE HAND</span>
                 <div className="flex gap-2">
                   <div className="mr-2">
@@ -292,7 +292,7 @@ function gloves() {
                 </div>
               </div>
 
-              <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
+              <div className="border-b-2 border-b-[#03ccff] p-[10px] flex justify-between">
                 <span className="mr-0">CHOOSE SIZE</span>
                 <div className="flex gap-2">
                   <div className="mr-2">
@@ -336,7 +336,7 @@ function gloves() {
                 </div>
               </div>
 
-              <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
+              <div className="border-b-2 border-b-[#03ccff] p-[10px] flex justify-between">
                 <span className="mr-10 flex-1">QUANTITY</span>
 
                 <div className="flex items-center gap-4">
@@ -368,12 +368,12 @@ function gloves() {
 
               <button
                 onClick={() => addToCart()}
-                className="w-full border-2 border-transparent bg-[#00B901] rounded-md p-2 text-white mt-10"
+                className="w-full border-2 border-transparent bg-[#03ccff] rounded-md p-2 text-white mt-10"
               >
                 add to cart
               </button>
               <Link href="/cart" passHref>
-                <button className="w-full text-[#00B901] bg-white border-2 border-[#00B901] rounded-md mt-6 p-2">
+                <button className="w-full text-[#03ccff] bg-white border-2 border-[#03ccff] rounded-md mt-6 p-2">
                   go to cart
                 </button>
               </Link>
@@ -412,7 +412,11 @@ function gloves() {
           </div>
         </div>
 
-        <Footer darkBackground={false} goldFooter={false} />
+        <Footer
+          darkBackground={false}
+          footerColor="#03ccff"
+          footerImage="lightBlueFooter.svg"
+        />
       </section>
 
       <div id="snackbar">Product has been added to the cart.</div>

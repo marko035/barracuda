@@ -14,9 +14,8 @@ function fitrack() {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
-  const [variant, setVariant] = useState("walnut");
   const totalImages = 5;
-  const price = 69;
+  const price = 25;
 
   const showSnackBar = (message) => {
     var snackBar = document.getElementById("snackbar");
@@ -28,7 +27,7 @@ function fitrack() {
   };
 
   const addToCart = () => {
-    const id = `holder-${variant}`;
+    const id = `fitrack`;
 
     if (!AllVariations[id]) {
       showSnackBar(
@@ -39,8 +38,7 @@ function fitrack() {
 
     const item = {
       id,
-      type: "holder",
-      variant,
+      type: "fitrack",
       quantity,
       price,
     };
@@ -90,7 +88,7 @@ function fitrack() {
 
   return (
     <>
-      <Header goldLogo={false} cart={cart} />
+      <Header cart={cart} />
 
       <section className="glovesTopSection flex flex-col min-h-screen px-6 py-20 xl:px-32 xl:pt-48 items-center text-center text-white pb-0">
         <div className="text-white text-xl xl:text-3xl xl:pr-10 font-extralight">
@@ -122,7 +120,7 @@ function fitrack() {
 
           <div className="flex items-center xl:ml-[-40px] before:none after:none">
             <div
-              className="hidden xl:block w-[40px] h-[40px] mt-8 leftArrow cursor-pointer"
+              className="hidden xl:block w-[40px] h-[40px] mt-8 fitrackArrow leftArrow cursor-pointer"
               onClick={() => previousImage()}
             ></div>
 
@@ -145,7 +143,7 @@ function fitrack() {
             </div>
 
             <div
-              className="hidden xl:block w-[40px] h-[40px] mt-8 rightArrow cursor-pointer"
+              className="hidden xl:block w-[40px] h-[40px] mt-8 fitrackArrow rightArrow cursor-pointer"
               onClick={() => nextImage()}
             ></div>
           </div>
@@ -232,7 +230,11 @@ function fitrack() {
           </div>
         </div>
 
-        <Footer darkBackground={false} goldFooter={false} />
+        <Footer
+          darkBackground={false}
+          footerColor="#00b901"
+          footerImage="footer.svg"
+        />
       </section>
 
       <div id="snackbar"></div>

@@ -108,7 +108,19 @@ function cart() {
                       <span className="text-[#00B901]"> {item.type}</span>
                     </div>
                     <div className="flex">
-                      {item.type === "holder" ? (
+                      {item.type === "fitrack" ? (
+                        <img
+                          src="/fitrack/fitrack-1.jpg"
+                          alt={item.variant}
+                          className="w-20 xl:w-32 mr-4"
+                        />
+                      ) : item.type === "scoreboard" ? (
+                        <img
+                          src="/scoreboard/scoreboard-1.jpg"
+                          alt={item.variant}
+                          className="w-20 xl:w-32 mr-4"
+                        />
+                      ) : item.type === "holder" ? (
                         <img
                           src={`/${item.variant}.svg`}
                           alt={item.variant}
@@ -119,7 +131,7 @@ function cart() {
                           style={{ backgroundColor: item.variant }}
                           className="w-20 xl:w-32 flex items-center justify-center text-5xl mr-4"
                         >
-                          <span>{item.size.toUpperCase()}</span>
+                          <span>{item.size?.toUpperCase()}</span>
                         </div>
                       )}
                       <div className="flex flex-col justify-between flex-1">

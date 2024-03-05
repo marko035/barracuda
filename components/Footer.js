@@ -1,12 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 
-function Footer({ darkBackground, goldFooter }) {
+function Footer({ darkBackground, footerColor, footerImage }) {
   return (
     <>
       <footer className="relative w-screen h-[400px]">
         <img
-          src={goldFooter ? "goldFooter.svg" : "/footer.svg"}
+          src={footerImage}
           alt="Background"
           className={
             "w-full h-full object-cover " +
@@ -21,19 +20,23 @@ function Footer({ darkBackground, goldFooter }) {
               </Link>
             </div>
             <div
-              className={
-                "footerUnderline" + (goldFooter ? " goldUnderline" : "")
-              }
+              style={{
+                background: footerColor,
+              }}
+              className="footerUnderline"
             ></div>
           </div>
+
           <div className="footerLinks cursor-pointer">
             <div>Privacy Policy</div>
             <div
-              className={
-                "footerUnderline" + (goldFooter ? " goldUnderline" : "")
-              }
+              style={{
+                background: footerColor,
+              }}
+              className="footerUnderline"
             ></div>
           </div>
+
           <div className="footerLinks">
             <div>
               <Link href="/#contactUs" scroll={false}>
@@ -41,9 +44,10 @@ function Footer({ darkBackground, goldFooter }) {
               </Link>
             </div>
             <div
-              className={
-                "footerUnderline" + (goldFooter ? " goldUnderline" : "")
-              }
+              style={{
+                background: footerColor,
+              }}
+              className="footerUnderline"
             ></div>
           </div>
         </div>

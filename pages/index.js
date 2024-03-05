@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header cart={cart} />
+      <Header cart={cart} logoColor="#00B901" logoImage="logo-white.svg" />
 
       <section className="w-screen h-screen relative bg-black flex flex-col justify-center items-center">
         <img src="/main.svg" alt="Main" className="w-1/2 mb-[100px] absolute" />
@@ -145,7 +145,9 @@ export default function Home() {
               <div className="flex flex-col justify-between bg-[#212121] p-8 border-0 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
                 <img src="/glove.svg" alt="lets" width={75} height={52} />
                 <div>
-                  <h3 className="text-[#16a34a] text-3xl font-bold">GLOVES</h3>
+                  <h3 className="text-[#03ccff] text-3xl font-bold mt-10">
+                    GLOVES
+                  </h3>
                   <p className="text-2xl">Professional pool gloves.</p>
                 </div>
                 {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
@@ -170,22 +172,33 @@ export default function Home() {
               </div>
             </Link>
 
-            <div className="flex flex-col justify-between bg-[#212121] p-8 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
-              <img src="/foil.svg" alt="lets" width={80} height={65} />
-              <div>
-                <h3 className="text-white text-3xl font-bold">GLOVES</h3>
-                <p className="text-2xl">Professional pool gloves.</p>
+            <Link href="/fitrack">
+              <div className="h-full flex flex-col justify-between bg-[#212121] p-8 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
+                <img src="/foil.svg" alt="lets" width={80} height={65} />
+                <div>
+                  <h3 className="text-3xl font-bold text-[#00B901]">
+                    FIT RACK
+                  </h3>
+                  <p className="text-2xl">Elegant pool racking foil.</p>
+                </div>
+                {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
               </div>
-              {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
-            </div>
-            <div className="flex flex-col justify-between bg-[#212121] p-8 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
-              <img src="/counters.svg" alt="lets" width={200} height={200} />
-              <div>
-                <h3 className="text-white text-3xl font-bold">GLOVES</h3>
-                <p className="text-2xl">Professional pool gloves.</p>
+            </Link>
+
+            <Link href="/scoreboard">
+              <div className="h-full flex flex-col justify-between bg-[#212121] p-8 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
+                <img src="/counters.svg" alt="lets" width={200} height={200} />
+                <div>
+                  <h3 className="text-3xl font-bold mt-10 text-[#712296]">
+                    SCORE BOARD
+                  </h3>
+                  <p className="text-2xl">
+                    Traditional score board with modern design.
+                  </p>
+                </div>
+                {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
               </div>
-              {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -213,7 +226,11 @@ export default function Home() {
         </a>
       </section>
 
-      <Footer darkBackground={false} goldFooter={false} />
+      <Footer
+        darkBackground={false}
+        footerColor="#00B901"
+        footerImage="footer.svg"
+      />
     </>
   );
 }

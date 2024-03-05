@@ -61,4 +61,6 @@ export const AllVariations = {
   "glove-#AAAAAA-right-l": "#820",
   "holder-walnut": "#953",
   "holder-mahogany": "#831",
+  fitrack: "#1141",
+  scoreboard: "#1143",
 };
