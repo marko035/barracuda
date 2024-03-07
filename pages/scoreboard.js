@@ -15,7 +15,7 @@ function scoreboard() {
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
   const totalImages = 7;
-  const price = 159;
+  const price = 149;
 
   const showSnackBar = (message) => {
     var snackBar = document.getElementById("snackbar");

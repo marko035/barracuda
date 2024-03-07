@@ -27,8 +27,10 @@ function Footer({ darkBackground, footerColor, footerImage }) {
             ></div>
           </div>
 
-          <div className="footerLinks cursor-pointer">
-            <div>Privacy Policy</div>
+          <div className="footerLinks">
+            <div>
+              <Link href="/policy">Privacy Policy</Link>
+            </div>
             <div
               style={{
                 background: footerColor,

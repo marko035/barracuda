@@ -179,10 +179,14 @@ function fitrack() {
               </div>
             </div>
 
-            <div className="p-[10px] flex justify-between">
+            <div className="border-b-2 border-b-[#00B901] p-[10px] flex justify-between">
               <span className="mr-10 flex-1">FINAL TOTAL</span>
 
               <span>${quantity * price}</span>
+            </div>
+
+            <div className="p-[10px] flex justify-between">
+              Package contains 6 foils.
             </div>
 
             <button

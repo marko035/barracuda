@@ -129,7 +129,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               }}
             ></div>
           </div>
-          <div className="flex flex-col p-4 items-start justify-center navbarLink">
+          {/* <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link
               style={{
                 color:
@@ -147,7 +147,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
                 background: logoColor,
               }}
             ></div>
-          </div>
+          </div> */}
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link
               style={{
