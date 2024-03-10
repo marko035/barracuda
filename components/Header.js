@@ -257,7 +257,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               FIT RACK
             </Link>
           </h1>
-          <h1>
+          {/* <h1>
             <Link
               style={{
                 color:
@@ -269,7 +269,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
             >
               SCORE BOARD
             </Link>
-          </h1>
+          </h1> */}
           <h1>
             <Link
               style={{

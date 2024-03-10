@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header cart={cart} logoColor="#00B901" logoImage="logo-white.svg" />
+      <Header cart={cart} logoColor="#ffffff" logoImage="logo-white.svg" />
 
       <section className="w-screen h-screen relative bg-black flex flex-col justify-center items-center">
         <img src="/main.svg" alt="Main" className="w-1/2 mb-[100px] absolute" />
