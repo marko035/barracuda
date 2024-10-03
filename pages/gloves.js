@@ -148,7 +148,7 @@ function gloves() {
       <Header cart={cart} logoColor="#03ccff" logoImage="logo-light-blue.svg" />
 
       <section className="glovesTopSection flex flex-col min-h-screen px-6 py-20 pb-0 xl:px-32 xl:pt-36 items-center text-center">
-        <div className="text-white text-xl xl:text-2xl xl:pr-10 font-extralight xl:w-[80%] mb-48">
+        <div className="text-white text-xl xl:text-2xl font-extralight xl:w-[80%] mb-48">
           <p className="pb-8 mt-20 xl:mt-0">
             Barracuda billiard & pool gloves are the ultimate stroke maximizing
             accessory .
@@ -173,6 +173,11 @@ function gloves() {
             Ventilated 4-way stretch mesh material on palm side with an
             extra-durable pad at wear point.
           </p>
+
+          <img
+            src="/gloves/glove-size-chart.jpg"
+            className="mt-20 mx-auto w-10/12"
+          />
 
           <h2 className="mt-48 mb-24">
             AVAILABLE IN 3 SIZES AND 10 COLORS YOU CAN CHOOSE FROM

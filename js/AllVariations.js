@@ -63,4 +63,5 @@ export const AllVariations = {
   "holder-mahogany": "#831",
   fitrack: "#1141",
   scoreboard: "#1143",
+  breaktip: "#1183",
 };

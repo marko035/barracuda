@@ -127,6 +127,12 @@ function cart() {
                             alt={item.variant}
                             className="w-20 xl:w-32 mr-4"
                           />
+                        ) : item.type === "breaktip" ? (
+                          <img
+                            src="/breaktip/breaktip-2.jpg"
+                            alt={item.variant}
+                            className="w-20 xl:w-32 mr-4"
+                          />
                         ) : (
                           <div
                             style={{ backgroundColor: item.variant }}

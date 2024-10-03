@@ -168,6 +168,17 @@ a {
   );
 }
 
+.breaktip.leftArrow,
+.breaktip.rightArrow {
+  background: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    transparent 50%,
+    #b6917f 50%,
+    #b6917f 100%
+  );
+}
+
 .shoppingCart {
   min-height: calc(100vh - 400px);
 }

@@ -30,6 +30,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
     "/fitrack": "#00b901",
     "/scoreboard": "#712296",
     "/cart": "#00b901",
+    "/breaktip": "#B6917F",
   };
 
   return (
@@ -121,6 +122,25 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               href="/fitrack"
             >
               FIT RACKS
+            </Link>
+            <div
+              className="headerUnderline"
+              style={{
+                background: logoColor,
+              }}
+            ></div>
+          </div>
+          <div className="flex flex-col p-4 items-start justify-center navbarLink">
+            <Link
+              style={{
+                color:
+                  router.pathname === "/breaktip"
+                    ? routeColorMap[router.pathname]
+                    : "white",
+              }}
+              href="/breaktip"
+            >
+              FLEX BREAK TIP
             </Link>
             <div
               className="headerUnderline"
