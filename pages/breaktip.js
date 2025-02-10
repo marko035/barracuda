@@ -15,7 +15,7 @@ function breaktip() {
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
   const totalImages = 5;
-  const price = 20;
+  const price = 22;
 
   const showSnackBar = (message) => {
     var snackBar = document.getElementById("snackbar");

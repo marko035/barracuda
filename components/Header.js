@@ -277,6 +277,17 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               FIT RACK
             </Link>
           </h1>
+          <Link
+            style={{
+              color:
+                router.pathname === "/breaktip"
+                  ? routeColorMap[router.pathname]
+                  : "white",
+            }}
+            href="/breaktip"
+          >
+            FLEX BREAK TIP
+          </Link>
           {/* <h1>
             <Link
               style={{
