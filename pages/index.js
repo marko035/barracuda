@@ -198,20 +198,33 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* <Link href="/scoreboard"> */}
-            {/* <div className="h-full flex flex-col justify-between bg-[#212121] p-8 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
-              <img src="/counters.svg" alt="lets" width={200} height={200} />
-              <div>
-                <h3 className="text-3xl font-bold mt-10 text-[#712296]">
-                  SCORE BOARD
-                </h3>
-                <p className="text-2xl">
-                  Traditional score board with modern design.
-                </p>
-              </div> */}
-            {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
-            {/* </div> */}
-            {/* </Link> */}
+            <Link href="/scoreboard">
+              <div className="h-full flex flex-col justify-between bg-[#212121] p-8 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
+                <img src="/counters.svg" alt="lets" width={200} height={200} />
+                <div>
+                  <h3 className="text-3xl font-bold mt-10 text-[#712296]">
+                    SCORE BOARD
+                  </h3>
+                  <p className="text-2xl">
+                    Traditional score board with modern design.
+                  </p>
+                </div>
+                {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
+              </div>
+            </Link>
+
+            <Link href="/lunarchalk">
+              <div className="h-full flex flex-col justify-between bg-[#212121] p-8 relative productContainer hover:scale-105 transition-all hover:bg-[#2b2b2b]">
+                <img src="/lunar-chalk.svg" alt="lets" width={80} height={80} />
+                <div>
+                  <h3 className="text-3xl font-bold mt-10 text-[#712296]">
+                    LUNAR CHALK
+                  </h3>
+                  <p className="text-2xl">Premium cue chalk.</p>
+                </div>
+                {/* <div className="w-12 h-12 rotate-45 absolute top-[-1rem] right-[-1rem] bg-white"></div> */}
+              </div>
+            </Link>
           </div>
         </div>
       </section>

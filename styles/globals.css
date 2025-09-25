@@ -179,6 +179,17 @@ a {
   );
 }
 
+.lunarchalk.leftArrow,
+.lunarchalk.rightArrow {
+  background: linear-gradient(
+    to bottom right,
+    transparent 0%,
+    transparent 50%,
+    #01b98d 50%,
+    #01b98d 100%
+  );
+}
+
 .shoppingCart {
   min-height: calc(100vh - 400px);
 }
@@ -264,5 +275,21 @@ input[type="radio"] {
   to {
     bottom: 0;
     opacity: 0;
+  }
+}
+
+.scale-animation {
+  animation: scaleUpDown 2s infinite alternate;
+}
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1); /* normal size */
+  }
+  50% {
+    transform: scale(1.1); /* scale up */
+  }
+  100% {
+    transform: scale(1); /* back to normal size */
   }
 }

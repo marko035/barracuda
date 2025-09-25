@@ -64,4 +64,5 @@ export const AllVariations = {
   fitrack: "#1141",
   scoreboard: "#1143",
   breaktip: "#1183",
+  lunarchalk: "#1221",
 };

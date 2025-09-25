@@ -31,6 +31,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
     "/scoreboard": "#712296",
     "/cart": "#00b901",
     "/breaktip": "#B6917F",
+    "/lunarchalk": "#01B98D",
   };
 
   return (
@@ -92,6 +93,63 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               }}
             ></div>
           </div>
+          <div className="flex flex-col p-4 items-start justify-center navbarLink scale-animation">
+            <Link
+              style={{
+                color:
+                  router.pathname === "/lunarchalk"
+                    ? routeColorMap[router.pathname]
+                    : "white",
+              }}
+              href="/lunarchalk"
+            >
+              LUNAR CHALK NEW
+            </Link>
+            <div
+              className="headerUnderline"
+              style={{
+                background: logoColor,
+              }}
+            ></div>
+          </div>
+          <div className="flex flex-col p-4 items-start justify-center navbarLink scale-animation">
+            <Link
+              style={{
+                color:
+                  router.pathname === "/breaktip"
+                    ? routeColorMap[router.pathname]
+                    : "white",
+              }}
+              href="/breaktip"
+            >
+              FLEX BREAK TIP NEW
+            </Link>
+            <div
+              className="headerUnderline"
+              style={{
+                background: logoColor,
+              }}
+            ></div>
+          </div>
+          <div className="flex flex-col p-4 items-start justify-center navbarLink scale-animation">
+            <Link
+              style={{
+                color:
+                  router.pathname === "/scoreboard"
+                    ? routeColorMap[router.pathname]
+                    : "white",
+              }}
+              href="/scoreboard"
+            >
+              SCOREBOARD NEW
+            </Link>
+            <div
+              className="headerUnderline"
+              style={{
+                background: logoColor,
+              }}
+            ></div>
+          </div>
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link
               style={{
@@ -102,7 +160,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               }}
               href="/holders"
             >
-              HOLDERS
+              CUE HOLDERS
             </Link>
             <div
               className="headerUnderline"
@@ -130,44 +188,6 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               }}
             ></div>
           </div>
-          <div className="flex flex-col p-4 items-start justify-center navbarLink">
-            <Link
-              style={{
-                color:
-                  router.pathname === "/breaktip"
-                    ? routeColorMap[router.pathname]
-                    : "white",
-              }}
-              href="/breaktip"
-            >
-              FLEX BREAK TIP
-            </Link>
-            <div
-              className="headerUnderline"
-              style={{
-                background: logoColor,
-              }}
-            ></div>
-          </div>
-          {/* <div className="flex flex-col p-4 items-start justify-center navbarLink">
-            <Link
-              style={{
-                color:
-                  router.pathname === "/scoreboard"
-                    ? routeColorMap[router.pathname]
-                    : "white",
-              }}
-              href="/scoreboard"
-            >
-              SCORE BOARD
-            </Link>
-            <div
-              className="headerUnderline"
-              style={{
-                background: logoColor,
-              }}
-            ></div>
-          </div> */}
           <div className="flex flex-col p-4 items-start justify-center navbarLink">
             <Link
               style={{
@@ -224,7 +244,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
       </div>
 
       {sidebarActive && (
-        <header className="flex flex-col items-center justify-center gap-16 font-light text-2xl md:hidden fixed w-screen h-screen bg-black z-10 text-white">
+        <header className="flex flex-col items-center justify-center gap-6 font-light text-xl md:hidden fixed w-screen h-screen bg-black z-10 text-white">
           <h1>
             <Link
               style={{
@@ -251,6 +271,45 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               GLOVES
             </Link>
           </h1>
+          <h1 className="scale-animation">
+            <Link
+              style={{
+                color:
+                  router.pathname === "/lunarchalk"
+                    ? routeColorMap[router.pathname]
+                    : "white",
+              }}
+              href="/lunarchalk"
+            >
+              LUNAR CHALK NEW
+            </Link>
+          </h1>
+          <h1 className="scale-animation">
+            <Link
+              style={{
+                color:
+                  router.pathname === "/breaktip"
+                    ? routeColorMap[router.pathname]
+                    : "white",
+              }}
+              href="/breaktip"
+            >
+              FLEX BREAK TIP NEW
+            </Link>
+          </h1>
+          <h1 className="scale-animation">
+            <Link
+              style={{
+                color:
+                  router.pathname === "/scoreboard"
+                    ? routeColorMap[router.pathname]
+                    : "white",
+              }}
+              href="/scoreboard"
+            >
+              SCOREBOARD NEW
+            </Link>
+          </h1>
           <h1>
             <Link
               style={{
@@ -261,7 +320,7 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               }}
               href="/holders"
             >
-              HOLDERS
+              CUE HOLDERS
             </Link>
           </h1>
           <h1>
@@ -277,30 +336,6 @@ function Header({ logoColor = "#00B901", logoImage = "logo.svg", cart }) {
               FIT RACK
             </Link>
           </h1>
-          <Link
-            style={{
-              color:
-                router.pathname === "/breaktip"
-                  ? routeColorMap[router.pathname]
-                  : "white",
-            }}
-            href="/breaktip"
-          >
-            FLEX BREAK TIP
-          </Link>
-          {/* <h1>
-            <Link
-              style={{
-                color:
-                  router.pathname === "/scoreboard"
-                    ? routeColorMap[router.pathname]
-                    : "white",
-              }}
-              href="/scoreboard"
-            >
-              SCORE BOARD
-            </Link>
-          </h1> */}
           <h1>
             <Link
               style={{

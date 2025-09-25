@@ -121,6 +121,12 @@ function cart() {
                             alt={item.variant}
                             className="w-20 xl:w-32 mr-4"
                           />
+                        ) : item.type === "lunarchalk" ? (
+                          <img
+                            src="/lunarchalk/lunarchalk-1.jpeg"
+                            alt={item.variant}
+                            className="w-20 xl:w-32 mr-4"
+                          />
                         ) : item.type === "holder" ? (
                           <img
                             src={`/${item.variant}.svg`}
