@@ -15,7 +15,7 @@ function scoreboard() {
   const [quantity, setQuantity] = useState(1);
   const [imageNumber, setImageNumber] = useState(1);
   const totalImages = 7;
-  const price = 149;
+  const price = 199;
 
   const showSnackBar = (message) => {
     var snackBar = document.getElementById("snackbar");
@@ -31,7 +31,7 @@ function scoreboard() {
 
     if (!AllVariations[id]) {
       showSnackBar(
-        "This variation of the product is not available at the moment."
+        "This variation of the product is not available at the moment.",
       );
       return;
     }
